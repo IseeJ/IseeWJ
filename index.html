@@ -65,7 +65,7 @@
         }
     
         .poster2 p {
-            margin: 0; /* Remove default margin for paragraph */
+            margin: 0; 
         }
     
         header {
@@ -81,12 +81,12 @@
             padding: 0;
             margin: 0;
             display: flex;
-            flex-wrap: wrap; /* Allows items to wrap when there's not enough space */
-            justify-content: center; /* Center the items */
+            flex-wrap: wrap; 
+            justify-content: center; 
         }
     
         nav ul li {
-            margin: 5px; /* Reduced margin for smaller screens */
+            margin: 5px; 
         }
     
         nav a {
@@ -97,14 +97,14 @@
             transition: background-color 0.3s, color 0.3s;
         }
     
-        @media (max-width: 600px) { /* Media query for smaller screens */
+        @media (max-width: 600px) { 
             nav a {
-                padding: 8px 10px; /* Adjust padding for smaller screens */
+                padding: 8px 10px; 
             }
     
             nav ul li {
-                flex: 1 1 100%; /* Each button takes full width in a single column */
-                text-align: center; /* Center align text */
+                flex: 1 1 100%; 
+                text-align: center; 
             }
         }
     
@@ -144,14 +144,14 @@
         /*OLD*/
         .gallery2 {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Maximum 3 columns */
+            grid-template-columns: repeat(4, 1fr); 
             gap: 15px;
             margin-bottom: 20px;
         }
     
         .gallery {
             display: grid;
-            grid-template-columns: repeat(4, minmax(300px, 1fr)); /* Responsive grid */
+            grid-template-columns: repeat(4, minmax(300px, 1fr)); 
             gap: 15px;
             margin-bottom: 20px;
         }
@@ -167,10 +167,8 @@
             transform: scale(1.05);
         }
     
-        /* Media query for smaller screens */
         @media (max-width: 900px) {
             .gallery, .gallery2 {
-                /*grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); Flexible layout */
                 grid-template-columns: repeat(2,1fr);
             }
         }
@@ -180,19 +178,19 @@
             justify-content: space-between;
             width: 100%;
             max-width: 1200px;
-            margin: 20 auto; /* Center the container */
-            padding: 0; /* Remove padding */
+            margin: 20 auto; 
+            padding: 0; 
         }
     
         .iframe-container,
         .image-container {
             flex: 1;
-            max-width: 100%; /* Each takes up half the width */
+            max-width: 100%; 
         }
     
         .iframe-container iframe {
             width: 100%;
-            height: 700px; /* Set iframe height */
+            height: 700px; 
         }
     
         .image-container {
@@ -200,7 +198,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden; /* Hide scrollbars */
+            overflow: hidden; 
             position: relative;
         }
     
@@ -214,9 +212,9 @@
         }
     
         .scrolling-gallery img {
-            max-width: 300px; /* Adjust width as needed */
+            max-width: 300px; 
             height: auto;
-            margin-right: 20px; /* Space between images */
+            margin-right: 20px;
             border-radius: 8px;
         }
     
@@ -246,11 +244,11 @@
         /*https://www.youtube.com/watch?v=t5AE66WgQD0*/
         /*https://www.w3schools.com/howto/howto_css_timeline.asp*/
                 /* Global Styles */
-                * {
+        * {
             box-sizing: border-box;
         }
 
-        /* The actual timeline (the vertical ruler) */
+       
         .timeline {
             position: relative;
             max-width: 100%;
@@ -281,10 +279,10 @@
 
         /* Container around content */
         .container {
-            padding: 10px 20px; /* Adjusted for better responsiveness */
+            padding: 10px 20px;
             position: relative;
             background-color: inherit;
-            width: 50%; /* Default width for larger screens */
+            width: 50%; 
             /*animation: movedown 1s linear forwards;
             opacity:0.5;*/
         }
@@ -361,22 +359,21 @@
         /* Tab content styles */
         .tab-content {
             padding: 20px;
-            display: none; /* Initially hidden, managed by JavaScript */
+            display: none; 
             text-align: center;
-            width: 100%; /* Allow full expansion */
+            width: 100%; 
             margin: 0 auto;
         }
 
-        /* Media queries - Responsive timeline on screens less than 600px wide */
+       
         @media screen and (max-width: 1200px) {
-            /* Adjust the timeline position */
             .timeline::after {
                 left: 31px;
             }
 
-            /* Full-width containers */
+            
             .container {
-                width: 100%; /* Full width on smaller screens */
+                width: 100%; 
                 padding-left: 70px;
                 padding-right: 25px;
             }
@@ -394,7 +391,7 @@
                 left: 15px;
             }
 
-            /* Make all right containers behave like the left ones */
+            
             .right {
                 left: 0%;
             }
@@ -500,23 +497,23 @@
             color: #ddd; /* Change color on hover */
         }
         .publications-container {
-    max-width: 800px; /* Set your desired max width */
-    margin: auto; /* Center the container */
-    padding: 20px; /* Add some padding */
-    background: #f9f9f9; /* Optional: light background for contrast */
-    border-radius: 5px; /* Optional: rounded corners */
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); Optional: shadow for depth */
+    max-width: 800px;
+    margin: auto; 
+    padding: 20px; 
+    background: #f9f9f9; 
+    border-radius: 5px; 
+    
 }
 
 .publications {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding: 0; /* Remove padding */
-    text-align: left; /* Align text to the left */
-    line-height: 1.6; /* Adjust line height for better readability */
+    padding: 0;
+    text-align: left; 
+    line-height: 1.6; 
 }
 
 .publications li {
-    margin-bottom: 15px; /* Space between list items */
+    margin-bottom: 15px; 
 
 }
 
@@ -534,23 +531,25 @@
 }
 
 .timeline-image {
-    width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5px; /* Rounded corners for the image */
-    margin-bottom: 10px; /* Space below the image */
+    width: 100%; 
+    height: auto; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
 }
 
 
+header img {
+            width: 40px; 
+            height: 40px;
+            margin-bottom: -30px;
+        }
 </style>
-
-
-    </head>
-    
+</head>
 <script async src="//www.instagram.com/embed.js"></script>
 <body>
     <header>
-        <img src="siteIMG/izeecon.png" alt="Icon" class="header-icon">
         <nav>
+            <img src="siteIMG/IzeeCon.PNG" alt="Icon" class="header-icon">
             <h1>I-see Warisa Jaidee</h1>
             <ul>
                 <li><a href="#overview" onclick="showTab('overview')">Overview</a></li>
@@ -564,12 +563,6 @@
     <main>
         <section id="overview" class="tab-content">
             <div class="timeline">
-                <!--div class="container left">
-                    <div class="content">
-                        <h4>2019 - 2021</h4>
-                        <p>IB Extended Essay on Modelling Dark Matter Distribution</p>
-                    </div>
-                </div-->
                 <div class="container left">
                     <div class="content">
                         <h4>SPRING 2022</h4>
@@ -662,8 +655,6 @@
         </section>
 
         <!-- Project Section -->
-
-
         <section id="project" class="tab-content" style="display:none;">
             <div class="publications-container">
                 <h2>Publications</h2>
@@ -672,67 +663,6 @@
                     <img src="project-image2.jpg" alt="Project Image 2" class="responsive">
 
             </div>
-        </section>
-            
-            <!--p> 
-                My github: <a href="https://github.com/IseeJ" target="_blank"> IseeJ </a>
-                <p></p>
-
-            <h3>Graphic Design and Coding</h3>
-            <p> I used JavaScript, CSS, and HTML to make "Cosmos Persona", an Astronomy/Physics themed personality quiz. </p>
-            <div class="gallery5">
-                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
-                    <a href="https://iseej.github.io/CosmosPersona/" target="_blank">
-                        <img src="resource/Cosmos0.gif" alt="Research Poster 1">
-                    </a>
-                </div>
-                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
-                    <a href="https://www.instagram.com/p/C4l6R75vHGG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
-                        <img src="resource/cosmos1_2.png" alt="Research Poster 1">
-                    </a>
-                </div>
-                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
-                    <a href="https://www.instagram.com/reel/C4j2M4lMStl/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
-                        <img src="resource/cosmos1_3.png" alt="Research Poster 1">
-                    </a>
-                </div>
-            </div>
-            <h3>Electronics and Engineering</h3>
-            <div class="gallery5">
-                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
-                    <a href="https://docs.google.com/document/d/1Zebi8uN-8SB7RfFWPxUpTNC9CNKW-ogKY3gPe-OxDbA/edit#heading=h.5xt8eic6oo9l" target="_blank">
-                        <img src="resource/sock.png" alt="Research Poster 1">
-                    </a>
-                </div>
-                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
-                    <p>I came up with this project in 2014. I shared bedroom with my sister. She has to wake up earlier than me for school, and her loud alarm also wakes me up as well. So, I made a silent alarm that would wake her up by tickling her feet instead of making loud noises. In 2021, I took an Engineering class and revisited this idea again, this time I implemented my 3D design, Arduino Coding, and Mechanical knowledge to make the idea come to life with my team.
-                    </p>
-                </div>
-                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
-                    <a href="resource/bot.png" target="_blank">
-                        <img src="resource/bot.png" alt="Research Poster 1">
-                    </a>
-                </div>
-            </div>
-            <h3>Graphical User Interface and Data Acquisition</h3>
-            <div class="gallery5">
-                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
-                    <a href="https://github.com/IseeJ/TempGUI" target="_blank">
-                        <img src="resource/TempGUI1.png" alt="Research Poster 1">
-                    </a>
-                </div>
-                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
-                    <a href="resource/bot.png" target="_blank">
-                        <img src="resource/bot.png" alt="Research Poster 1">
-                    </a>
-                </div>
-                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
-                    <a href="resource/cage.png" target="_blank">
-                        <img src="resource/cage.png" alt="Research Poster 1">
-                    </a>
-                </div>
-            </div-->
-
         </section>
     </main>
 
@@ -798,6 +728,7 @@
     </script>
 </body>
 </html>
+
 
 
 
