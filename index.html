@@ -6,6 +6,7 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="siteIMG/izeecon.png">
     <style>
         body {
             /*font-family: 'Comfortaa', sans-serif;*/
@@ -413,7 +414,7 @@
     .gallery5 {
       display: grid;
       /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       justify-content: center;
     }
@@ -463,6 +464,9 @@
        /* Responsive for smaller screens */
     @media (max-width: 800px) {
     .gallery4 {
+        grid-template-columns: 1fr; /* Show only 1 poster per row on small screens */
+      }
+      .gallery5 {
         grid-template-columns: 1fr; /* Show only 1 poster per row on small screens */
       }
     }
@@ -536,6 +540,7 @@
     margin-bottom: 10px; /* Space below the image */
 }
 
+
 </style>
 
 
@@ -544,6 +549,7 @@
 <script async src="//www.instagram.com/embed.js"></script>
 <body>
     <header>
+        <img src="siteIMG/izeecon.png" alt="Icon" class="header-icon">
         <nav>
             <h1>I-see Warisa Jaidee</h1>
             <ul>
@@ -593,11 +599,19 @@
         <!-- Art Section -->
         <section id="art" class="tab-content">
             <h2>Art</h2>
-            <div class="gallery">
-                <img src="images/art1.jpg" alt="Art 1">
-                <img src="images/art2.jpg" alt="Art 2">
-                <img src="images/art3.jpg" alt="Art 3">
-                <!-- Add more images as needed -->
+            <div class="gallery5">
+                <div class="gallery-item" onclick="openInNewTab('siteIMG/poster3.png')">
+                    <img src="siteIMG/Cosmos0.gif" alt="Art 1">
+                </div>
+                <div class="gallery-item" onclick="openInNewTab('siteIMG/poster3.png')">
+                    <img src="siteIMG/Cosmos0.gif" alt="Art 1">
+                </div>
+                <div class="gallery-item" onclick="openInNewTab('siteIMG/poster3.png')">
+                    <img src="siteIMG/Cosmos0.gif" alt="Art 1">
+                </div>
+                <div class="gallery-item" onclick="openInNewTab('siteIMG/poster3.png')">
+                    <img src="siteIMG/Cosmos0.gif" alt="Art 1">
+                </div>
             </div>
         </section>
 
@@ -613,7 +627,7 @@
         <h2>Talks / Posters</h2>
             <div class="gallery4">
                 <div class="gallery-item" onclick="openInNewTab('siteIMG/poster2.png')">
-                <img src="resource/poster2.png" alt="Research Poster 1">
+                <img src="siteIMG/poster2.png" alt="Research Poster 1">
                   <div class="caption">
                     <h3>Quality assurance of Macro-Pixel Sub-Assemblies (MaPSA) before installation in CMS</h3>
                     <p> US CMS PURSUE internship 2023 <br>Advisor: Dr. Jennet Dickinson, Fermilab <br>The High Luminosity upgrade for CERN's LHC will replace CMS silicon tracking detectors with PS modules, consisting of one strip sensor and one macro-pixel sensor. The  Macro-Pixel Sub-Assembly (MaPSA) requires thorough testing of each pixel for optimal performance. This project aims to develop an efficient data handling system for MaPSA quality assurance, enabling performance tracking of each MaPSA's pixel through an accessible database before installation into the CMS outer tracker.</p>
@@ -621,21 +635,21 @@
                 </div>
             
                 <div class="gallery-item" onclick="openInNewTab('siteIMG/poster3.png')">
-                  <img src="resource/poster3.png" alt="Research Poster 2">
+                  <img src="siteIMG/poster3.png" alt="Research Poster 2">
                   <div class="caption">
                     <h3>Neutrino Detector Research Poster 2</h3>
                     <p>Another fascinating neutrino poster to dazzle the world of science.</p>
                   </div>
                 </div>
                 <div class="gallery-item" onclick="openInNewTab('siteIMG/poster2.png')">
-                    <img src="resource/poster2.png" alt="Research Poster 2">
+                    <img src="siteIMG/poster2.png" alt="Research Poster 2">
                     <div class="caption">
                       <h3>Neutrino Detector Research Poster 2</h3>
                       <p>Another fascinating neutrino poster to dazzle the world of science.</p>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openInNewTab('siteIMG/poster2.png')">
-                    <img src="resource/poster2.png" alt="Research Poster 2">
+                    <img src="siteIMG/poster2.png" alt="Research Poster 2">
                     <div class="caption">
                       <h3>Neutrino Detector Research Poster 2</h3>
                       <p>Another fascinating neutrino poster to dazzle the world of science.</p>
