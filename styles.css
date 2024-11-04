@@ -568,3 +568,19 @@ header img {
     object-fit: cover; 
     border-radius: 100px; 
 }
+
+@media (max-width: 600px) {
+    .me-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .me-content {
+        max-width: 100%; /* Full width for text */
+    }
+
+    .me-image {
+        max-width: 100%; /* Full width for image */
+        margin-top: 20px; /* Space between text and image */
+    }
+}
