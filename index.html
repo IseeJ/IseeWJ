@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            /*font-family: 'Comfortaa', sans-serif;*/
+            font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            /*font-family: 'Lucida Console', monospace;*/
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+    
+        p {
+            font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    
+        a {
+            color: #843b62;
+            text-decoration: none;
+        }
+        a :hover {
+            color: #e3a8c8;
+            text-decoration: none;
+        }
+        h1 {
+            font-weight: bold;
+            font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 35px;
+        }
+    
+        h2 {
+            font-size: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        h3{
+            font-size: 20px;
+            font-weight: bold;
+            
+        }
+
+    
+
+        .poster2 {
+            display: flex; /* Create a flex container for the poster */
+            align-items: center; /* Center items vertically within the poster */
+        }
+    
+        .poster2 img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+    
+        .poster2 p {
+            margin: 0; /* Remove default margin for paragraph */
+        }
+    
+        header {
+            background-color: #ffb997;
+            color: #843b62;
+            padding: 11px;
+            text-align: center;
+        }
+    
+        nav ul {
+            
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap when there's not enough space */
+            justify-content: center; /* Center the items */
+        }
+    
+        nav ul li {
+            margin: 5px; /* Reduced margin for smaller screens */
+        }
+    
+        nav a {
+            color: #843b62;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    
+        @media (max-width: 600px) { /* Media query for smaller screens */
+            nav a {
+                padding: 8px 10px; /* Adjust padding for smaller screens */
+            }
+    
+            nav ul li {
+                flex: 1 1 100%; /* Each button takes full width in a single column */
+                text-align: center; /* Center align text */
+            }
+        }
+    
+        nav a.active {
+            background-color: #ff6f61;
+            color: white;
+            font-weight: bold;
+        }
+    
+        nav a:hover {
+            background-color: #ff6f61;
+            color: white;
+        }
+    
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+    
+        .tab-content {
+            padding: 20px;
+            display: none;
+            text-align: center;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+    
+
+
+
+        
+
+        /*OLD*/
+        .gallery2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Maximum 3 columns */
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+    
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+    
+        .gallery2 img, .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+    
+        .gallery2 img:hover, .gallery img:hover {
+            transform: scale(1.05);
+        }
+    
+        /* Media query for smaller screens */
+        @media (max-width: 900px) {
+            .gallery, .gallery2 {
+                /*grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); Flexible layout */
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+    
+        .embed-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20 auto; /* Center the container */
+            padding: 0; /* Remove padding */
+        }
+    
+        .iframe-container,
+        .image-container {
+            flex: 1;
+            max-width: 100%; /* Each takes up half the width */
+        }
+    
+        .iframe-container iframe {
+            width: 100%;
+            height: 700px; /* Set iframe height */
+        }
+    
+        .image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Hide scrollbars */
+            position: relative;
+        }
+    
+        .scrolling-gallery {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            white-space: nowrap;
+            animation: scroll-left 15s linear infinite; /* Scroll effect */
+        }
+    
+        .scrolling-gallery img {
+            max-width: 300px; /* Adjust width as needed */
+            height: auto;
+            margin-right: 20px; /* Space between images */
+            border-radius: 8px;
+        }
+    
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #843b62;
+            color: #ffffff;
+            font-size: 11px;
+            font-family: 'Comfortaa', sans-serif;
+        }
+
+
+
+        /*********/
+        /*TIMELINE*/
+        /*********/
+        /*https://www.youtube.com/watch?v=t5AE66WgQD0*/
+        /*https://www.w3schools.com/howto/howto_css_timeline.asp*/
+                /* Global Styles */
+                * {
+            box-sizing: border-box;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #ff6f61;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            animation: moveline 6s linear forwards;
+        }
+
+        
+        @keyframes moveline {
+            0%{
+                height:0;
+            }
+            100%{
+                height:100%;
+            }
+        }
+
+        /* Container around content */
+        .container {
+            padding: 10px 20px; /* Adjusted for better responsiveness */
+            position: relative;
+            background-color: inherit;
+            width: 50%; /* Default width for larger screens */
+            /*animation: movedown 1s linear forwards;
+            opacity:0.5;*/
+        }
+
+        @keyframes movedown{
+            0%{
+                opacity: 1;
+                transform: translateY(-30px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        .container:nth-child(1){
+            animation-delay: 0s;
+        }
+        .container:nth-child(2){
+            animation-delay: 1s;
+        }
+        .container:nth-child(3){
+            animation-delay: 2s;
+        }
+        .container:nth-child(4){
+            animation-delay: 3s;
+        }
+        .container:nth-child(5){
+            animation-delay: 4s;
+        }
+ 
+
+
+        /* The circles on the timeline */
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: #ff6f61;
+            border: 4px solid #ff6f61;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Place the container to the left */
+        .left {
+            left: 0;
+        }
+
+        /* Place the container to the right */
+        .right {
+            left: 50%;
+        }
+        .right::after {
+            left: -16px;
+        }
+
+        /* The actual content */
+        .content {
+            padding: 20px 30px;
+            background-color: #ffb997;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        .content img{
+            max-width: 250px;
+            position: relative;
+        }
+
+        /* Tab content styles */
+        .tab-content {
+            padding: 20px;
+            display: none; /* Initially hidden, managed by JavaScript */
+            text-align: center;
+            width: 100%; /* Allow full expansion */
+            margin: 0 auto;
+        }
+
+        /* Media queries - Responsive timeline on screens less than 600px wide */
+        @media screen and (max-width: 1200px) {
+            /* Adjust the timeline position */
+            .timeline::after {
+                left: 31px;
+            }
+
+            /* Full-width containers */
+            .container {
+                width: 100%; /* Full width on smaller screens */
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .container::before {
+                left: 60px;
+                border: medium solid #ffb997;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent #ffb997 transparent transparent;
+            }
+
+
+            .left::after,
+            .right::after {
+                left: 15px;
+            }
+
+            /* Make all right containers behave like the left ones */
+            .right {
+                left: 0%;
+            }
+        }
+
+        /*********/
+        /*GALLERY*/
+        /*********/
+
+    .gallery4 {
+      display: grid;
+      /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-content: center;
+    }
+    .gallery5 {
+      display: grid;
+      /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-content: center;
+    }
+
+
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+      /*border: 1px solid #ddd;*/
+      /*border-radius: 8px;*/
+      overflow: hidden;
+      background-color: #fff;
+      /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+
+
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .caption {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .caption h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .caption p {
+      font-size: 1rem;
+      color: #555;
+    }
+       /* Responsive for smaller screens */
+    @media (max-width: 800px) {
+    .gallery4 {
+        grid-template-columns: 1fr; /* Show only 1 poster per row on small screens */
+      }
+    }
+
+
+    section2 {
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    .socials {
+            list-style: none;
+            padding: 0;
+        }
+
+        .socials li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .socials a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px; /* Adjust icon size */
+        }
+
+        .socials a:hover {
+            color: #ddd; /* Change color on hover */
+        }
+        .publications-container {
+    max-width: 800px; /* Set your desired max width */
+    margin: auto; /* Center the container */
+    padding: 20px; /* Add some padding */
+    background: #f9f9f9; /* Optional: light background for contrast */
+    border-radius: 5px; /* Optional: rounded corners */
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); Optional: shadow for depth */
+}
+
+.publications {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0; /* Remove padding */
+    text-align: left; /* Align text to the left */
+    line-height: 1.6; /* Adjust line height for better readability */
+}
+
+.publications li {
+    margin-bottom: 15px; /* Space between list items */
+
+}
+
+.publications a{
+    color: #843b62;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.publications a:hover{
+    color: #bc85a3;
+    text-decoration: none;
+
+}
+
+.timeline-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for the image */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+</style>
+
+
+    </head>
+    
+<script async src="//www.instagram.com/embed.js"></script>
+<body>
+    <header>
+        <nav>
+            <h1>I-see Warisa Jaidee</h1>
+            <ul>
+                <li><a href="#overview" onclick="showTab('overview')">Overview</a></li>
+                <li><a href="#research" onclick="showTab('research')">Research</a></li>
+                <li><a href="#art" onclick="showTab('art')">Art Portfolio</a></li>
+                <li><a href="#project" onclick="showTab('project')">Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="overview" class="tab-content">
+            <div class="timeline">
+                <!--div class="container left">
+                    <div class="content">
+                        <h4>2019 - 2021</h4>
+                        <p>IB Extended Essay on Modelling Dark Matter Distribution</p>
+                    </div>
+                </div-->
+                <div class="container left">
+                    <div class="content">
+                        <h4>SPRING 2022</h4>
+                        <img src="siteIMG/GTPC.png" alt="TL_2" class="timeline-image">
+                        <p>Joined Battat Lab group on research and development of the <a href="https://www.qpix.work/">Q-Pix</a> 3D readout system prototype for neutrino detection.</p>
+                    </div>
+                </div>
+
+                <div class="container right">
+                    <div class="content">
+                        <h4>WINTER 2022</h4>
+                        <img src="siteIMG/GTPC.png" alt="TL_2" class="timeline-image">
+                        <p>Engineered experiment apparatus for the vacuum system to gather data and analyze diffusion patterns reconstructed with the analog Q-Pix. Measured transverse electron diffusion within an Argon gas time projection chamber.</p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="content">
+                        <h4>WINTER 2022</h4>
+                        <img src="siteIMG/Pyb.png" alt="TL_2" class="timeline-image">
+                        <p></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Art Section -->
+        <section id="art" class="tab-content">
+            <h2>Art</h2>
+            <div class="gallery">
+                <img src="images/art1.jpg" alt="Art 1">
+                <img src="images/art2.jpg" alt="Art 2">
+                <img src="images/art3.jpg" alt="Art 3">
+                <!-- Add more images as needed -->
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="tab-content" style="display:none;">
+            <div class="publications-container">
+                <h2>Publications</h2>
+                <ul class="publications">
+                    <li>June 2024 | Co-author: <a href="https://doi.org/10.1088/1748-0221/19/06/P06007" target="_blank">First operation of a multi-channel Q-Pix prototype: measuring transverse electron diffusion in a gas time projection chamber</a>, Journal of Instrumentation</li>
+                    <li>2016 - Present | Columnist: <a href="https://www.nstda.or.th/sci2pub/sarawit/" target="_blank">Sarawit Magazine</a>, National Science and Technology Development Agency, Thailand (NSTDA) - Publishing a monthly article</li>
+                </ul>
+            </div>
+        <h2>Talks / Posters</h2>
+            <div class="gallery4">
+                <div class="gallery-item" onclick="openInNewTab('siteIMG/poster2.png')">
+                <img src="resource/poster2.png" alt="Research Poster 1">
+                  <div class="caption">
+                    <h3>Quality assurance of Macro-Pixel Sub-Assemblies (MaPSA) before installation in CMS</h3>
+                    <p> US CMS PURSUE internship 2023 <br>Advisor: Dr. Jennet Dickinson, Fermilab <br>The High Luminosity upgrade for CERN's LHC will replace CMS silicon tracking detectors with PS modules, consisting of one strip sensor and one macro-pixel sensor. The  Macro-Pixel Sub-Assembly (MaPSA) requires thorough testing of each pixel for optimal performance. This project aims to develop an efficient data handling system for MaPSA quality assurance, enabling performance tracking of each MaPSA's pixel through an accessible database before installation into the CMS outer tracker.</p>
+                  </div>
+                </div>
+            
+                <div class="gallery-item" onclick="openInNewTab('siteIMG/poster3.png')">
+                  <img src="resource/poster3.png" alt="Research Poster 2">
+                  <div class="caption">
+                    <h3>Neutrino Detector Research Poster 2</h3>
+                    <p>Another fascinating neutrino poster to dazzle the world of science.</p>
+                  </div>
+                </div>
+                <div class="gallery-item" onclick="openInNewTab('siteIMG/poster2.png')">
+                    <img src="resource/poster2.png" alt="Research Poster 2">
+                    <div class="caption">
+                      <h3>Neutrino Detector Research Poster 2</h3>
+                      <p>Another fascinating neutrino poster to dazzle the world of science.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openInNewTab('siteIMG/poster2.png')">
+                    <img src="resource/poster2.png" alt="Research Poster 2">
+                    <div class="caption">
+                      <h3>Neutrino Detector Research Poster 2</h3>
+                      <p>Another fascinating neutrino poster to dazzle the world of science.</p>
+                    </div>
+                </div>
+              </div>
+              </section2>
+
+
+        </section>
+
+        <!-- Project Section -->
+
+
+        <section id="project" class="tab-content" style="display:none;">
+            <div class="publications-container">
+                <h2>Publications</h2>
+                <ul class="publications">
+                    <p>Description of your project goes here. You can provide links or details about what you've done.</p>
+                    <img src="project-image2.jpg" alt="Project Image 2" class="responsive">
+
+            </div>
+        </section>
+            
+            <!--p> 
+                My github: <a href="https://github.com/IseeJ" target="_blank"> IseeJ </a>
+                <p></p>
+
+            <h3>Graphic Design and Coding</h3>
+            <p> I used JavaScript, CSS, and HTML to make "Cosmos Persona", an Astronomy/Physics themed personality quiz. </p>
+            <div class="gallery5">
+                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
+                    <a href="https://iseej.github.io/CosmosPersona/" target="_blank">
+                        <img src="resource/Cosmos0.gif" alt="Research Poster 1">
+                    </a>
+                </div>
+                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
+                    <a href="https://www.instagram.com/p/C4l6R75vHGG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
+                        <img src="resource/cosmos1_2.png" alt="Research Poster 1">
+                    </a>
+                </div>
+                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
+                    <a href="https://www.instagram.com/reel/C4j2M4lMStl/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
+                        <img src="resource/cosmos1_3.png" alt="Research Poster 1">
+                    </a>
+                </div>
+            </div>
+            <h3>Electronics and Engineering</h3>
+            <div class="gallery5">
+                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
+                    <a href="https://docs.google.com/document/d/1Zebi8uN-8SB7RfFWPxUpTNC9CNKW-ogKY3gPe-OxDbA/edit#heading=h.5xt8eic6oo9l" target="_blank">
+                        <img src="resource/sock.png" alt="Research Poster 1">
+                    </a>
+                </div>
+                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
+                    <p>I came up with this project in 2014. I shared bedroom with my sister. She has to wake up earlier than me for school, and her loud alarm also wakes me up as well. So, I made a silent alarm that would wake her up by tickling her feet instead of making loud noises. In 2021, I took an Engineering class and revisited this idea again, this time I implemented my 3D design, Arduino Coding, and Mechanical knowledge to make the idea come to life with my team.
+                    </p>
+                </div>
+                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
+                    <a href="resource/bot.png" target="_blank">
+                        <img src="resource/bot.png" alt="Research Poster 1">
+                    </a>
+                </div>
+            </div>
+            <h3>Graphical User Interface and Data Acquisition</h3>
+            <div class="gallery5">
+                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
+                    <a href="https://github.com/IseeJ/TempGUI" target="_blank">
+                        <img src="resource/TempGUI1.png" alt="Research Poster 1">
+                    </a>
+                </div>
+                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
+                    <a href="resource/bot.png" target="_blank">
+                        <img src="resource/bot.png" alt="Research Poster 1">
+                    </a>
+                </div>
+                <div class="gallery-item" onclick="openInNewTab('resource/poster3.png')">
+                    <a href="resource/cage.png" target="_blank">
+                        <img src="resource/cage.png" alt="Research Poster 1">
+                    </a>
+                </div>
+            </div-->
+
+        </section>
+    </main>
+
+    <footer>
+        <ul class="socials">
+            <li><a href="mailto:wj100@wellesley.edu" target="_blank"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/iseewj/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/IseeJ" target="_blank"><i class="fab fa-github"></i></a></li>
+        </ul>
+        <p>Tel. +1 781 742 0586 | Wellesley, MA</p>
+        <p>&copy; 2024 I-see Warisa Jaidee</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            showTab('research'); // Show project tab by default
+        });
+
+ function showTab(tabName) {
+    event.preventDefault();
+
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+        tab.style.display = 'none';
+    });
+
+    const selectedTab = document.getElementById(tabName);
+    selectedTab.style.display = 'block';
+
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    const activeLink = document.querySelector(`nav a[href="#${tabName}"]`);
+    activeLink.classList.add('active');
+}
+
+
+
+        function highlightActiveTab(activeTab) {
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === activeTab) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        const gallery = document.querySelector('.scrolling-gallery');
+
+        gallery.addEventListener('mouseover', () => {
+            gallery.style.animationPlayState = 'paused';
+        });
+
+        gallery.addEventListener('mouseout', () => {
+            gallery.style.animationPlayState = 'running';
+        });
+
+        function openInNewTab(imageSrc) {
+            window.open(imageSrc, '_blank');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
