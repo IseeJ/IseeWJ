@@ -135,41 +135,6 @@ main {
 
 
 
-
-
-
-/*OLD*/
-.gallery2 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(300px, 1fr)); 
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.gallery2 img, .gallery img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.gallery2 img:hover, .gallery img:hover {
-    transform: scale(1.05);
-}
-
-@media (max-width: 900px) {
-    .gallery, .gallery2 {
-        grid-template-columns: repeat(2,1fr);
-    }
-}
-
 .embed-container {
     display: flex;
     justify-content: space-between;
