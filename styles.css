@@ -10,9 +10,7 @@ body {
     height: 100vh;
     cursor: default;
 }
-.custom-cursor {
-    cursor: url('siteIMG/IzeeCon.PNG'), auto; /* Fallback to auto */
-}
+
 
 p {
     font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -39,6 +37,11 @@ h2 {
 }
 
 h3{
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+h4{
     font-size: 20px;
     font-weight: bold;
     
@@ -455,10 +458,10 @@ color: #555;
 /* Responsive for smaller screens */
 @media (max-width: 800px) {
 .gallery4 {
-grid-template-columns: 1fr; /* Show only 1 poster per row on small screens */
+grid-template-columns: 1fr; 
 }
 .gallery5 {
-grid-template-columns: 1fr; /* Show only 1 poster per row on small screens */
+grid-template-columns: repeat(2, 1fr);
 }
 }
 
