@@ -8,6 +8,10 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    cursor: default;
+}
+.custom-cursor {
+    cursor: url('siteIMG/IzeeCon.PNG'), auto; /* Fallback to auto */
 }
 
 p {
@@ -503,6 +507,7 @@ line-height: 1.6;
 
 .p-content li {
 margin-bottom: 15px; 
+list-style-type: square;
 
 }
 
@@ -553,6 +558,13 @@ header img {
 
 .me-content p {
     margin: 5px 0;
+    text-align: left; 
+}
+
+.me-content li {
+    margin: 5px 0;
+    text-align: left; 
+    list-style-type: square;
 }
 
 .me-image {
@@ -568,6 +580,7 @@ header img {
     object-fit: cover; 
     border-radius: 100px; 
 }
+
 
 @media (max-width: 600px) {
     .me-container {
