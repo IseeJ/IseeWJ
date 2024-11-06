@@ -104,6 +104,11 @@ h4{
     font-weight: bold;
     
 }
+h5{
+    font-size: 18px;
+    font-weight: bold;
+    
+}
 
 
 
@@ -457,6 +462,9 @@ padding: 20px;
 text-align: center;
 }
 
+.caption li {
+    text-align: center;
+}
 .caption h3 {
 margin-bottom: 10px;
 font-size: 1.5rem;
