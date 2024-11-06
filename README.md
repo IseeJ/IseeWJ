@@ -1,3 +1,3 @@
 # Izeesite
 
-https://iseej.github.io/Izeesite/ 
+https://iseej.github.io/IseeWJ/ 
