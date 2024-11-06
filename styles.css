@@ -11,6 +11,64 @@ body {
     cursor: default;
 }
 
+header {
+    background-color: #ffb997;
+    color: #843b62;
+    padding: 11px;
+    text-align: center;
+    position: relative;
+}
+
+.header-icon {
+    cursor: pointer;
+    width: 50px;
+    height: auto;
+}
+
+nav ul {
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+nav ul li {
+    margin: 5px; 
+}
+
+nav a {
+    color: #843b62;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.shimeji {
+    position: absolute;
+    width: 50px; /* Adjust for header space */
+    bottom: 100%; /* Start above the header */
+    animation: fall 1s forwards, walk 4s linear infinite;
+}
+
+
+/* Falling animation */
+@keyframes fall {
+    0% { bottom: 100%; }
+    100% { bottom: 0; }
+}
+
+/* Walking animation */
+@keyframes walk {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0); } 
+}
+
 
 p {
     font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -65,34 +123,8 @@ h4{
     margin: 0; 
 }
 
-header {
-    background-color: #ffb997;
-    color: #843b62;
-    padding: 11px;
-    text-align: center;
-}
 
-nav ul {
-    
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-}
 
-nav ul li {
-    margin: 5px; 
-}
-
-nav a {
-    color: #843b62;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
 
 @media (max-width: 600px) { 
     nav a {
@@ -132,6 +164,8 @@ main {
     max-width: 80%;
     margin: 0 auto;
 }
+
+
 
 
 
@@ -308,7 +342,7 @@ footer {
 /* The actual content */
 .content {
     padding: 20px 30px;
-    background-color: #ffb997;
+    background-color: #f9f9f9;
     position: relative;
     border-radius: 6px;
 }
@@ -370,6 +404,8 @@ grid-template-columns: repeat(2, 1fr);
 gap: 20px;
 justify-content: center;
 }
+
+
 .gallery5 {
 display: grid;
 /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
@@ -389,7 +425,7 @@ max-width: 100%;
 overflow: hidden;
 background-color: #fff;
 /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-cursor: pointer;
+/*cursor: pointer;*/
 transition: box-shadow 0.3s ease;
 }
 
@@ -400,6 +436,17 @@ width: 100%;
 height: auto;
 object-fit: cover;
 transition: transform 0.3s ease;
+cursor: pointer;
+}
+.gallery-item a {
+    color: #843b62;
+    text-decoration: none;
+    font-weight: bold;
+}
+.gallery-item a:hover {
+color: #bc85a3;
+text-decoration: none;
+
 }
 
 .gallery-item:hover img {
@@ -461,22 +508,36 @@ section2 {
 .p-container {
 max-width: 800px;
 margin: auto; 
-padding: 20px; 
+padding: 0px; 
 background: #f9f9f9; 
 border-radius: 5px; 
 
 }
+
+.p-container iframe {
+    width: 100%; 
+    max-width: 600px; 
+    height: 300px; 
+    margin: 10px 0; 
+    overflow: hidden; 
+    position: relative; 
+}
+
 .p-content {
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 padding: 0;
-text-align: left; 
+text-align: center; 
 line-height: 1.6; 
 }
 
 .p-content li {
 margin-bottom: 15px; 
 list-style-type: square;
+text-align: left; 
+}
 
+.p-content p2 {
+    text-align: left; 
 }
 
 .p-content a{
@@ -507,7 +568,11 @@ header img {
     height: 40px;
     margin-bottom: -30px;
 }
-
+.header-icon {
+    cursor: pointer;
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+}
 
 .me-container {
     display: flex;
@@ -561,7 +626,28 @@ header img {
     }
 
     .me-image {
-        max-width: 100%; /* Full width for image */
-        margin-top: 20px; /* Space between text and image */
+        max-width: 100%; 
+        margin-top: 20px; 
     }
 }
+
+.image-container {
+    display: grid;
+    gap: 10px; /* Space between images */
+    grid-template-columns: repeat(2, 1fr); /* Change the 3 to set the number of images per row */
+}
+
+.side-by-side-image {
+    width: 100%; 
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.side-by-side-image:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    
+}
+
+
+
