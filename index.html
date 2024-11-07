@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I-see's site</title>
+    <title>I-see's Site</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="siteIMG/IzeeCon.PNG">
@@ -26,7 +26,7 @@
             <ul>
                 <li><a href="#overview" onclick="showTab('overview')">About</a></li>
                 <li><a href="#research" onclick="showTab('research')">Research</a></li>
-                <li><a href="#art" onclick="showTab('art')">Art Portfolio</a></li>
+                <li><a href="#art" onclick="showTab('art')">Art</a></li>
                 <li><a href="#project" onclick="showTab('project')">Project</a></li>
             </ul>
         </nav>
@@ -37,15 +37,16 @@
         <section id="overview" class="tab-content">
             <div class="me-container">
                 <div class="me-content">
-                    <p>Education:</p>
-                    <p><li>2019 - 2021: UWC Atlantic College, Wales</li></p>
-                    <p><li>2021 - 2025: Wellesley College, MA</li></p>
+                    <h2>Education:</h2>
                     <p>Bachelor of Arts, Major: Astrophysics, Minor: Mathematics</p>
+                    <p><li>2021 - 2025: Wellesley College, MA</li></p>
+                    <p><li>2019 - 2021: UWC Atlantic College, Wales</li></p>
                 </div>
                 <div class="me-image">
                     <img src="siteIMG/me.png" alt="About Me Image">
                 </div>
             </div>
+            <h2>Research Experiences:</h2>
             <div class="timeline">
                 <div class="container left">
                     <div class="content">
@@ -64,19 +65,60 @@
                 </div>
                 <div class="container left">
                     <div class="content">
-                        <h4>FALL 2023</h4>
+                        <h4>FALL 2022</h4>
                         <img src="siteIMG/Pyb.png" alt="TL_2" class="timeline-image">
-                        <p></p>
+                        <p>Battat Lab Independent Study: Utilized PyBoltz simulations and swarm Monte Carlo methods to model transverse electron diffusion, estimating uncertainties in diffusion measurements across a range of pressures. </p>
                     </div>
                 </div>
                 <div class="container right">
                     <div class="content">
-                        <h4>SPRING 2022</h4>
+                        <h4>SPRING 2023</h4>
                         <img src="siteIMG/tl_pyQt5.gif" alt="TL_2" class="timeline-image">
-                        <p></p>
+                        <p><b>NASA's Transiting Exoplanet Survey Satellite (TESS) Follow-up Researcher:</b>
+                            <li>Operated a 0.7m PlaneWave telescope to take CCD images of stars with exoplanet candidates.</li>
+                            <li>Reduced and analyzed light-curve data to confirm transiting exoplanets using AstroImageJ.</li>
+                            <br><b>Battat Lab Independent Study: </b>
+                            <li>Built the cryostat facilities for Q-Pix LAr electronics testing.</li>
+                            <li>Modelling electric fieldlines using FreeFEM for engineering of the purity monitor.</li></p>
                     </div>
                 </div>
 
+                <div class="container left">
+                    <div class="content">
+                        <h4>SUMMER 2023</h4>
+                        <img src="siteIMG/tl_pyQt5.gif" alt="TL_2" class="timeline-image">
+                        <p>Science Center Summer Research Program: 
+                            <li>Designed and built a liquid argon purifier using molecular seives and active copper for water and oxygen removal.</li>
+                            <li>Developed graphical user interface with PyQt5 for real-time monitoring of the regeneration process of the purifier.</li>
+                        </p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="content">
+                        <h4>FALL 2023</h4>
+                        <img src="siteIMG/tl_pyQt5.gif" alt="TL_2" class="timeline-image">
+                        <p><li>NASA's Transiting Exoplanet Survey Satellite (TESS) Follow-up Researcher</li>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h2>Work Experiences:</h2>
+            <div class="p-container">
+                <ul class="p-content">
+                    <li>Physics, Mathematics Teaching Assistant</li>
+                    <li>Planewave Telescope Observer</li>
+                    <li>Astronomy Night Lab Assistant</li>
+                </ul>
+            </div>
+
+            <h2>Clubs / Student Organizations:</h2>
+            <div class="p-container">
+                <ul class="p-content">
+                    <li>President of Astronomy club | UWC Atlantic College | 2019-2021: Founded an astronomy club, Coordinated with professors, and planned events such as dark sky camp, astronomy lectures</li>
+                    <li>Executive Board of A.S.T.R.O. club | Wellesley College | 2021-2025: Public Night Organizer: Organize public nights, outreach, and internal events at Whitin Observatory.</li>
+                    <br>
+                    <img src="project-image2.jpg" alt="Project Image 2" class="responsive">
+                </ul>
             </div>
         </section>
 
@@ -159,8 +201,9 @@
                 <img src="siteIMG/poster2.png" alt="Research Poster 1" onclick="openInNewTab('siteIMG/poster2.png')">
                   <div class="caption">
                     <h4>Quality assurance of Macro-Pixel Sub-Assemblies (MaPSA) before installation in CMS</h4>
-                    <h5><a href="https://sites.google.com/upr.edu/uscms-pursue/">US CMS PURSUE internship 2023</a></h5>
-                    <p>Advisor: <a href="https://people.as.cornell.edu/jennet-dickinson">Dr. Jennet Dickinson</a>, Fermilab <br>The High Luminosity upgrade for CERN's LHC will replace CMS silicon tracking detectors with PS modules, consisting of one strip sensor and one macro-pixel sensor. The  Macro-Pixel Sub-Assembly (MaPSA) requires thorough testing of each pixel for optimal performance. This project aims to develop an efficient data handling system for MaPSA quality assurance, enabling performance tracking of each MaPSA's pixel through an accessible database before installation into the CMS outer tracker.</p>
+                    <h5><a href="https://sites.google.com/upr.edu/uscms-pursue/">2023 U.S. CMS PURSUE internship</a>, <a href="https://sites.bu.edu/bucuwip2023/">2023 APS CUWiP Poster Presentation</a></h5>
+                    <p>Advisor: <a href="https://jdickins.web.cern.ch/">Dr. Jennet Dickinson</a>, Fermilab 
+                        <br>The High Luminosity upgrade for CERN's LHC will replace CMS silicon tracking detectors with PS modules featuring the Macro-Pixel Sub-Assembly (MaPSA). I helped developed database system for MaPSA quality assurance, enabling performance tracking of each MaPSA's pixel through an accessible database before installation into the CMS outer tracker.</p>
                   </div>
                 </div>
             
@@ -170,22 +213,20 @@
                     <h4>Development of a Small-Scale Liquid Argon Purification System for Neutrino Research</h4>
                     <h5><a href="https://www.wellesley.edu/news/a-summer-of-science">Science Center Summer Research Program 2024</a></h5>
                     <p>Advisor: <a href="https://www.wellesley.edu/people/james-battatn">Dr. James Battat</a>, Wellesley College
-                        <br>We developed a small-scale LAr purification system for neutrino detection, using active copper and molecular sieves to eliminate oxygen and water, ensuring low contaminant levels. I helped constructing the apparatus, developed data acquisition software, and ran the regeneration process to prepare the purifier. We evaluated purity with a monitor featuring a time projection chamber, where electron drift lifetime—measured by the charge ratio between cathode and anode—indicates impurity concentration.
+                        <br>We developed a small-scale LAr purification system for neutrino detection, using active copper and molecular sieves to eliminate oxygen and water, ensuring low contaminant levels. I helped constructing the apparatus, developed data acquisition software, and ran the regeneration process to prepare the purifier.
                         </p>
                   </div>
                 </div>
                 <div class="gallery-item" onclick="openInNewTab('siteIMG/poster2.png')">
-                    <img src="siteIMG/poster2.png" alt="Research Poster 2">
                     <div class="caption">
-                      <h3>Neutrino Detector Research Poster 2</h3>
-                      <p>Another fascinating neutrino poster to dazzle the world of science.</p>
+                      <h3>Ruhlman Conference</h3>
+                      <p>2022</p>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openInNewTab('siteIMG/poster2.png')">
-                    <img src="siteIMG/poster2.png" alt="Research Poster 2">
                     <div class="caption">
-                      <h3>Neutrino Detector Research Poster 2</h3>
-                      <p>Another fascinating neutrino poster to dazzle the world of science.</p>
+                      <h3>Tanner Conference</h3>
+                      <p>2022</p>
                     </div>
                 </div>
               </div>
@@ -203,7 +244,7 @@
                     <p>March 2024: I developed an astronomy-themed personality quiz using JavaScript, HTML, and CSS as a learning resource. </p>
                     <div class="image-container">
                         <img src="siteIMG/Cosmos0.gif" alt="Image 1" class="side-by-side-image" onclick= "openInNewTab('https://iseej.github.io/CosmosPersona/')">
-                        <img src="siteIMG/Cosmos1_1.png" alt="Image 2" class="side-by-side-image"   onclick= "openInNewTab('https://www.instagram.com/p/C4l6R75vHGG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
+                        <img src="siteIMG/cosmos1_1.png" alt="Image 2" class="side-by-side-image"   onclick= "openInNewTab('https://www.instagram.com/p/C4l6R75vHGG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
                     </div>
                     </ul>
                     
