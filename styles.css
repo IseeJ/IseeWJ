@@ -662,7 +662,7 @@ header img {
 .image-container {
     display: grid;
     gap: 10px; /* Space between images */
-    grid-template-columns: repeat(2, 1fr); /* Change the 3 to set the number of images per row */
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .side-by-side-image {
@@ -674,8 +674,8 @@ header img {
 .side-by-side-image:hover {
     cursor: pointer;
     transform: scale(1.05);
-    
 }
+
 
 
 
