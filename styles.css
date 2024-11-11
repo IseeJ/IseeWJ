@@ -439,9 +439,14 @@ justify-content: center;
 }
 
 .section2 {
-    width: 48%; /* Adjust the width to ensure both sections fit side by side */
+    width: 48%; 
 }
 
+.special-img img {
+    width: 300px; 
+    height: 200px; 
+    object-fit: cover;
+}
 .gallery-item {
 display: flex;
 flex-direction: column;
@@ -523,6 +528,7 @@ section2 {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 .socials {
     list-style: none;
