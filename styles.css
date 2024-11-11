@@ -119,8 +119,8 @@ h6{
 
 
 .poster2 {
-    display: flex; /* Create a flex container for the poster */
-    align-items: center; /* Center items vertically within the poster */
+    display: flex; 
+    align-items: center; 
 }
 
 .poster2 img {
@@ -425,6 +425,22 @@ gap: 20px;
 justify-content: center;
 }
 
+.gallery6 {
+    display: grid;
+    /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    }
+
+.container2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section2 {
+    width: 48%; /* Adjust the width to ensure both sections fit side by side */
+}
 
 .gallery-item {
 display: flex;
@@ -436,7 +452,7 @@ max-width: 100%;
 overflow: hidden;
 background-color: #fff;
 /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-/*cursor: pointer;*/
+cursor: pointer;
 transition: box-shadow 0.3s ease;
 }
 
@@ -665,7 +681,19 @@ header img {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.image1-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width:300px;
+}
+
 .side-by-side-image {
+    width: 100%; 
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.side-by-side-image1 {
     width: 100%; 
     height: auto;
     transition: transform 0.3s ease;
