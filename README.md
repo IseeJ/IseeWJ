@@ -1,3 +1,3 @@
-# my Website (WIP..)
+# :D
 
 https://iseej.github.io/IseeWJ/ 
