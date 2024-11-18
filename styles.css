@@ -482,8 +482,8 @@ text-decoration: none;
 }
 
 .gallery-item iframe {
-    width: 100vw;  /* 100% of the viewport width */
-    height: 100vh; /* 100% of the viewport height */
+    width: 100vw;  
+    height: 100vh;
 }
 
 
@@ -543,11 +543,11 @@ section2 {
 .socials a {
     color: #fff;
     text-decoration: none;
-    font-size: 24px; /* Adjust icon size */
+    font-size: 24px; 
 }
 
 .socials a:hover {
-    color: #ddd; /* Change color on hover */
+    color: #ddd; 
 }
 .p-container {
 max-width: 800px;
@@ -613,8 +613,13 @@ width: 100%;
 height: auto; 
 border-radius: 5px; 
 margin-bottom: 10px; 
+transition: transform 0.3s ease;
 }
 
+.timeline-image:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
 
 header img {
     width: 40px; 
@@ -623,19 +628,19 @@ header img {
 }
 .header-icon {
     cursor: pointer;
-    width: 50px; /* Adjust size as needed */
+    width: 50px;
     height: auto;
 }
 
 .me-container {
     display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
+    align-items: center; 
+    justify-content: center; 
     gap: 20px;
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    text-align: center; /* Center text */
+    text-align: center;
 }
 
 .me-content {
@@ -676,12 +681,12 @@ header img {
 
 @media (max-width: 600px) {
     .me-container {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items */
+        flex-direction: column; 
+        align-items: center;
     }
 
     .me-content {
-        max-width: 100%; /* Full width for text */
+        max-width: 100%; 
     }
 
     .me-image {
@@ -692,7 +697,7 @@ header img {
 
 .image-container {
     display: grid;
-    gap: 10px; /* Space between images */
+    gap: 10px; 
     grid-template-columns: repeat(3, 1fr);
 }
 
