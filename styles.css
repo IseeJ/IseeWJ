@@ -637,7 +637,7 @@ header img {
     align-items: center; 
     justify-content: center; 
     gap: 20px;
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
     text-align: center;
@@ -725,5 +725,114 @@ header img {
 }
 
 
+/*slider*/
+.content-box {
+    width: 100%; 
+    max-width: 800px; 
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
 
+.slider-container {
+    text-align: center;
+}
 
+.image-display {
+    margin-bottom: 20px;
+    overflow: hidden; 
+    border-radius: 15px;
+}
+
+.image-display img {
+    width: 100%; 
+    max-width: 100%; 
+    height: auto;
+    transition: opacity 0.5s ease;
+}
+
+.description-box {
+    margin: 10px 0 20px;
+    font-size: 14px; 
+    font-weight: bold;
+    color: #333;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.slider {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: -30px; 
+    left: 0;
+    background: #e0e0e0;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #cbc259;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-runnable-track {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+}
+
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.step-indicator span {
+    font-size: 14px; 
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    width: 18%;
+    text-align: center;
+    border-radius: 20px;
+}
+.step-indicator span.active {
+    background-color: #692d4d;
+    color: white;
+    transition: transform 0.3s;
+}
+
+.step-indicator span:hover {
+    background-color: #843b62;
+    color: white;
+    transition: transform 0.3s;
+}
+/* Responsive styling */
+@media (max-width: 600px) {
+    .content-box {
+        width: 95%;
+    }
+
+    .description-box {
+        font-size: 12px; /* Even smaller text for mobile */
+    }
+
+    .step-indicator span {
+        font-size: 12px; /* Smaller text for mobile */
+        width: 16%;
+    }
+
+    .slider::-webkit-slider-thumb {
+        width: 18px; /* Adjust thumb size for smaller screens */
+        height: 18px;
+    }
+}
