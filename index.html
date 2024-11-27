@@ -18,13 +18,12 @@
   alt="Icon" 
   class="header-icon" 
   id="headerIcon" 
-  onclick="hitGif(); showTab('overview')" 
+  onclick="hitGif(); showTab('research')" 
   onmouseover="pauseGif()" 
   onmouseleave="playGif()"
 >
             <h1>I-see Warisa Jaidee</h1>
             <ul>
-                <li><a href="#overview" onclick="showTab('overview')">About</a></li>
                 <li><a href="#research" onclick="showTab('research')">Research</a></li>
                 <li><a href="#art" onclick="showTab('art')">Art</a></li>
                 <li><a href="#project" onclick="showTab('project')">Project</a></li>
@@ -34,150 +33,37 @@
     <audio id="clickSound" src="click.mp3"></audio>
 
     <main>
-        <section id="overview" class="tab-content">
-            <div class="me-container">
-                <div class="me-content">
-                    <h2>Education:</h2>
-                    <p><li>2021 - 2025: B.A., Wellesley College, MA</li></p>
-                    <p>Major: Astrophysics, Minor: Mathematics</p>
-                    <p><li>2019 - 2021: IB Diploma, UWC Atlantic College, Wales</li></p>
-                </div>
-                <div class="me-image">
-                    <img src="siteIMG/me.png" alt="About Me Image">
-                </div>
-            </div>
+        
 
-            <h2>Timeline:</h2>
-            <div class="timeline">
-                <div class="container left">
-                    <div class="content">
-                        <h4>SPRING 2022</h4>
-                        <img src="siteIMG/GTPC.png" alt="TL_2" class="timeline-image">
-                        <p>Joined <a href="https://www.wellesley.edu/people/james-battat">Dr. James Battat</a>'s lab group on research and development of the <a href="https://www.qpix.work/">Q-Pix</a> 3D readout system prototype for neutrino detection.</p>
-                    </div>
-                </div>
-
-                <div class="container right">
-                    <div class="content">
-                        <h4>WINTER 2022</h4>
-                        <img src="siteIMG/cage.png" alt="TL_2" class="timeline-image">
-                        <p>Engineered experiment apparatus for the vacuum system to gather data and analyze diffusion patterns reconstructed with the analog Q-Pix. Measured transverse electron diffusion within an Argon gas time projection chamber.</p>
-                    </div>
-                </div>
-                <div class="container left">
-                    <div class="content">
-                        <h4>FALL 2022 - SPRING 2023</h4>
-                        <img src="siteIMG/Pyb.png" alt="TL_2" class="timeline-image">
-                        <p><li><b>Battat Lab Independent Study:</b> Utilized PyBoltz simulations (swarm Monte Carlo methods) to model transverse electron diffusion, estimating uncertainties in diffusion measurements across a range of pressures.</li>
-                        <li><b>Laser Lab Assistant:</b>  Assist <a href="https://www.wellesley.edu/people/robert-berg">Dr. Robert Berg</a> in creating tutorials and tools for teaching of Advanced Experimental Physics Classes</li> </p>
-                    </div>
-                </div>
-                <div class="container right">
-                    <div class="content">
-                        <h4>SUMMER 2023</h4>
-                        <img src="siteIMG/Fermilab.jpg" alt="TL_2" class="timeline-image">
-                        <p><b>Fermi National Laboratory, U.S. CMS PURSUE Research Program</b>
-                            <br><a href="https://jdickins.web.cern.ch/">Dr. Jennet Dickinson</a>
-                            <li>Performed quality assurance on Macro-Pixel Sub-Assemblies prior to their installation in the Compact Muon
-                                Solenoid (CMS) outer tracker upgrade.</li>
-                            <li>Conducted probe testing on silicon pixel detectors to evaluate their performance and developed Python script
-                                to analyze signal responses and optimize the CERN database framework.</li>
-                        </p>
-                    </div>
-                </div>
-                <div class="container left">
-                    <div class="content">
-                        <h4>FALL 2023 - SPRING 2024</h4>
-                        <img src="siteIMG/scope.png" alt="TL_2" class="timeline-image">
-                        <p><b>NASA's Transiting Exoplanet Survey Satellite (TESS) Follow-up Researcher</b>
-                            <br><a href="https://sites.google.com/a/wellesley.edu/kkm/">Dr. Kim McLeod</a>
-                            <li>Operated a 0.7m PlaneWave telescope to take CCD images of stars with exoplanet candidates.</li>
-                            <li>Reduced and analyzed light-curve data to confirm transiting exoplanets using AstroImageJ.</li>
-                            </p>
-                    </div>
-                </div>
-                <div class="container right">
-                    <div class="content">
-                        <h4>SPRING 2024</h4>
-                        <img src="siteIMG/Fieldcage.jpg" alt="TL_2" class="timeline-image">
-                            <br><b>Battat Lab Independent Study</b>
-                            <li>Built the cryostat facilities for Q-Pix LAr electronics testing.</li>
-                            <li>Modelling electric fieldlines using FreeFEM for engineering of the purity monitor.</li></p>
-                    </div>
-                </div>
-                <div class="container left">
-                    <div class="content">
-                        <h4>SUMMER 2024</h4>
-                        <img src="siteIMG/tl_pyQt5.gif" alt="TL_2" class="timeline-image">
-                        <p><b>Science Center Summer Research Program</b>
-                            <li>Designed and built a liquid argon purifier using molecular seives and active copper for water and oxygen removal.</li>
-                            <li>Developed graphical user interface with PyQt5 for real-time monitoring of the regeneration process of the purifier.</li>
-                        </p>
-                    </div>
-                </div>
-                <div class="container right">
-                    <div class="content">
-                        <h4>FALL 2024</h4>
-                        <img src="siteIMG/Exp.png" alt="TL_2" class="timeline-image">
-                        <p><b>Senior honor thesis in Astrophysics:</b> "Development of Liquid Argon Purification System for Neutrino Research"
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-<!--h2>Research Experiences:</h2>
-
-  <div class="p-container" style="max-width: 2000px;">
-    <div class="content-box">
-        <div class="slider-container">
-            <div class="image-display" style="max-width: 2000px;">
-                <img id="current-image" src="siteIMG/test2.jpg" alt="Slide Image">
-            </div>
-            <div class="slider-wrapper">
-                <input type="range" id="slider" min="0" max="5" step="1" value="0" class="slider">
-                <div class="step-indicator">
-                    <span data-step="0"></span>
-                    <span data-step="1">2021</span>
-                    <span data-step="2">2022</span>
-                    <span data-step="3">2023</span>
-                    <span data-step="4">2024</span>
-                    <span data-step="5">2025</span>
-                </div>
-            </div>
-            <div class="description-box">
-                <p id="slide-description">Timeline</p>
-            </div>
-        </div>
-    </div>
-</div-->
-            <br>
-
-            <div class="p-container">
-                <h2>Work Experiences:</h2>
-                <ul class="p-content">
-                    <li>Physics, Mathematics Teaching Assistant</li>
-                    <li>Planewave Telescope Observer</li>
-                    <li>Astronomy Night Lab Assistant</li>
-                </ul>
-            </div>
-            <br>
-            <div class="p-container">
-                <h2>Computing Skills</h2>
-                <ul class="p-content">
-                    Python, MATLAB, Arduino IDE, FEA (Gmsh, FreeFEM, Elmer), CAD (OnShape, Fusion), LTSpice, Javascript, HTML
-                </ul>
-            </div>
-
-            <br>
-            <div class="p-container" >
-                <h2>Clubs / Student Organizations:</h2>
-                <ul class="p-content">
-                    <li>President of Astronomy club | UWC Atlantic College | 2019-2021: Founded an astronomy club, Coordinated with professors, and planned events such as dark sky camp, astronomy lectures</li>
-                    <li>Executive Board of A.S.T.R.O. club | Wellesley College | 2021-2025: Public Night Organizer: Organize public nights, outreach, and internal events at Whitin Observatory.</li>
-                    <br>
-                </ul>
+        <section id="article1" class="tab-content" style="display:none; ">
+            <span class="back-arrow" onclick="showTab('research')">&#8592; Back</span>
+            <div class="p-container" style="background-color: #ffffff;;">
+                <img src="article1.jpg">
+                <p>Description1</p>
             </div>
         </section>
+        <section id="article2" class="tab-content" style="display:none;">
+            <span class="back-arrow" onclick="showTab('research')">&#8592; Back</span>
+            <div class="p-container" style="background-color: #f9f9f9;">
+                <img src="article1.jpg">
+                <p>Description2</p>
+            </div>
+        </section>
+        <section id="article3" class="tab-content" style="display:none;">
+            <span class="back-arrow" onclick="showTab('research')">&#8592; Back</span>
+            <div class="p-container" style="background-color: #f9f9f9;">
+                <img src="article1.jpg">
+                <p>Description3</p>
+            </div>
+        </section>
+        <section id="article4" class="tab-content" style="display:none;">
+            <span class="back-arrow" onclick="showTab('research')">&#8592; Back</span>
+            <div class="p-container" style="background-color: #f9f9f9;">
+                <img src="article1.jpg">
+                <p>Description4</p>
+            </div>
+        </section>
+
 
 
 
@@ -194,6 +80,7 @@
                         <img src="siteIMG/C2.png" alt="Image 2" class="side-by-side-image"   onclick= "openInNewTab('siteIMG/C2.png')">
                         <img src="siteIMG/C4.png" alt="Image 2" class="side-by-side-image"   onclick= "openInNewTab('siteIMG/C4.png')">
                 </div>
+        
                 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
                     <div style="flex: 1 1 45%;">
                         <h4>2024 <a href="https://sites.bc.edu/cuwip/">APS Conference for Undergraduate Women and Gender Minorities (CUWiP)</a></h4>
@@ -218,6 +105,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
                 
 
             <h4>Battat Lab and Q-Pix Consortium</h4>
@@ -273,7 +161,6 @@
                 </div>
             </div>
             <h4>Public Night Coloring Sheets</h4>
-
             <div class="container2">
                 <div class="section2 left">
                     <div class="gallery6">
@@ -302,7 +189,7 @@
             <h4>MORE!!!</h4>
             <div class="gallery5">
 
-                <div class="gallery-item"><img src="siteIMG/B1.PNG"></div>
+                <div class="gallery-item"><img src="siteIMG/B1.PNG" onclick="openInNewTab('https://store.line.me/stickershop/product/12379556/en')"></div>
                 <div class="gallery-item"><img src="siteIMG/B2.PNG"></div>
                 <div class="gallery-item"><img src="siteIMG/B12.PNG"></div>
                 <div class="gallery-item"><img src="siteIMG/B13.PNG"></div>
@@ -315,8 +202,6 @@
                 <div class="gallery-item"><img src="siteIMG/B9.PNG"></div>
                 <div class="gallery-item"><img src="siteIMG/B10.PNG"></div>
             </div>
-            
-           
     
                
         </section>
@@ -326,11 +211,34 @@
             <div class="p-container">
                 <!--h2>Interests</h2-->
                 <p>Particle Physics Experiment | Neutrino | Dark Matter | Detectors | Instrumentation R&D</p>
+                <div class="people-container">
+                    <div class="person-card"  onclick= "openInNewTab('https://www.qpix.work/')">
+                        <img src="siteIMG/Qpix.PNG">
+                        <h3>Q-Pix</h3>
+                        <p>2021 - 2023</p>
+                    </div>
+                    <div class="person-card" onclick="showTab('article2')">
+                        <img src="siteIMG/MAPSA.PNG">
+                        <h3>CMS MaPSA</h3>
+                        <p>2021 - 2023</p>
+                    </div>
+                    <div class="person-card" onclick="showTab('article3')">
+                        <img src="siteIMG/TESSfollowup.PNG">
+                        <h3>TESS follow-up</h3>
+                        <p>2022 - Present</p>
+                    </div>
+                    <div class="person-card" onclick="showTab('article4')">
+                        <img src="siteIMG/QPIXLAR.PNG">
+                        <h3>Q-Pix LAr</h3>
+                        <p>2023 - Present</p>
+                    </div>
+                </div>
+        
             </div>
             <div class="p-container">
                 <h2>Publications</h2>
                 <ul class="p-content">
-                    <li>June 2024 | N. Hoch, O. Seidel | <a href="https://doi.org/10.1088/1748-0221/19/06/P06007" target="_blank">First operation of a multi-channel Q-Pix prototype: measuring transverse electron diffusion in a gas time projection chamber</a>, Journal of Instrumentation</li>
+                    <li>June 2024 | N. Hoch, et al. | <a href="https://doi.org/10.1088/1748-0221/19/06/P06007" target="_blank">First operation of a multi-channel Q-Pix prototype: measuring transverse electron diffusion in a gas time projection chamber</a>, Journal of Instrumentation</li>
                     <li>2016 - Present | IW. Jaidee | <a href="https://www.nstda.or.th/sci2pub/category/columnist/isee/">”Science meets Art”</a> column featuring monthly science articles and comics on <a href="https://www.nstda.or.th/sci2pub/sarawit/">Sarawit Magazine</a>,
                         National Science and Technology Development Agency, Thailand <a href="https://www.nstda.or.th/en/">(NSTDA)</a></li>
                 </ul>
@@ -340,41 +248,54 @@
             <div class="gallery4">
                 <div class="gallery-item">
                 <img src="siteIMG/poster2.png" alt="Research Poster 1" onclick="openInNewTab('siteIMG/poster2.png')">
-                  <div class="caption">
+                  <div class="caption"  style = "line-height: 1.2;">
                     <h4>Quality assurance of Macro-Pixel Sub-Assemblies (MaPSA) before installation in CMS</h4>
                     <h5><a href="https://sites.google.com/upr.edu/uscms-pursue/">2023 U.S. CMS PURSUE internship</a>, <a href="https://sites.bu.edu/bucuwip2023/">2023 APS CUWiP Poster Presentation</a></h5>
                     <p>Advisor: <a href="https://jdickins.web.cern.ch/">Dr. Jennet Dickinson</a>, Fermilab 
-                        <br>The High Luminosity upgrade for CERN's LHC will replace CMS silicon tracking detectors with PS modules featuring the Macro-Pixel Sub-Assembly (MaPSA). I helped developed database system for MaPSA quality assurance, enabling performance tracking of each MaPSA's pixel through an accessible database before installation into the CMS outer tracker.</p>
+                        <br>The High Luminosity upgrade for CERN's LHC will replace CMS silicon tracking detectors with PS modules featuring the Macro-Pixel Sub-Assembly (MaPSA). I developed database system for MaPSA quality assurance, enabling performance tracking of each MaPSA's pixel through an accessible database before installation into the CMS outer tracker.</p>
                   </div>
                 </div>
             
                 <div class="gallery-item">
                   <img src="siteIMG/poster3.png" alt="Research Poster 2" onclick="openInNewTab('siteIMG/poster3.png')">
-                  <div class="caption">
+                  <div class="caption"  style = "line-height: 1.2;">
                     <h4>Development of a Small-Scale Liquid Argon Purification System for Neutrino Research</h4>
                     <h5><a href="https://www.wellesley.edu/news/a-summer-of-science">Science Center Summer Research Program 2024</a></h5>
                     <p>Advisor: <a href="https://www.wellesley.edu/people/james-battat">Dr. James Battat</a>, Wellesley College
-                        <br>We developed a small-scale LAr purification system for neutrino detection, using active copper and molecular sieves to eliminate oxygen and water, ensuring low contaminant levels. I helped constructing the apparatus, developed data acquisition software, and ran the regeneration process to prepare the purifier.
+                        <br>We developed a small-scale LAr purification system for neutrino detection, using active copper and molecular sieves to eliminate oxygen and water, ensuring low contaminant levels. I constructed the apparatus, developed data acquisition software, and ran the regeneration process to prepare the purifier.
                         </p>
                   </div>
                 </div>
                 <div class="gallery-item">
                     <img src="siteIMG/SAQ.png">
-                    <div class="caption">
+                    <div class="caption" style = "line-height: 1.2;">
                       <h3>Ruhlman Conference, Wellesley College</h3>
                       <p><li>April 26, 2023: Group panel on "Exploring The Universe From a Room With No Windows" <a href="https://docs.google.com/presentation/d/1q6S31qnQCdkUjAk4pswZKWvvU_YSc5mC1X5e0msTAJo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Presentation</a></li>
+                        <br>
                         <li>April 11, 2024: Poster presentation "Neutrino Hunters-Developing Experimental Prototypes to Test Neutrino Detection Techniques" <a href="https://drive.google.com/file/d/1U04N5RcroFs_K8qXqnIdTmuSu_3_KVfU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Poster</a></li></p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="siteIMG/SRP.png">
-                    <div class="caption">
+                    <div class="caption" style = "line-height: 1.2;">
                       <h3>Tanner Conference, Wellesley College</h3>
                       <p><li>November 14, 2023: Presentation on summer research experiences at Fermilab and Thai National Radio Telescope "From Subatomic Particles to the Vast Universe and Beyond…" <a href="https://docs.google.com/presentation/d/1MAvdtjC4u-fNZ-Oc4C4U__df1zNYNZ4soft58SW3xYI/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">Presentation</a></li>
+                        <br>
                         <li>October 29, 2024: Presentation on Wellesley summer research program experiences, "Tiny Particles, Big Questions: Exploring Experimental Particle Physics" <a href="https://docs.google.com/presentation/d/16lHIMn8pX0ygZFRSo-879njpF898w2ZwIXsptkJ02AY/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">Presentation</a></li></p>
                     </div>
                 </div>
               </div>
+
+              <div class="p-container">
+              <h2>Skills</h2>
+              <ul style="text-align: left; font-size: 18px; line-height: 1.5;">
+                <p><li><strong>Computing:</strong> Python, MATLAB, Arduino IDE, Unix shell, Finite Element Analysis (Gmsh, FreeFEM, Elmer), Computer-aided Design (OnShape, Fusion), JavaScript</li>
+                <li><strong>Others:</strong> Graphic design, Website development</li>
+              </ul></p>
+              </div>
+              
+              </div>
+              
 
 
         </section>
@@ -413,7 +334,7 @@
                 <h2>Tickle Alarm Socks</h2>
                 <ul class="p-content">
                     <p>I shared bedroom with my sister. She has to wake up earlier than me for school, and her loud alarm also wakes me up as well. I sketched an idea to make a silent alarm, waking her up by tickling her feet.
-                        In 2021, I took an Introduction to Engineering class and revisited this idea again. Teaming up with my classmates, Alondra Galindo and Cheryl Wang, we implemented CAD drawing, Arduino Coding, and Mechanical knowledge to make the idea come to life. <a href ="https://docs.google.com/presentation/d/13hWsGHE-d0-9D-Z07w4guDBfwOjxu-3qIPSov6Zi-jI/edit?usp=sharing">Presentation</a></p>
+                        In 2021, I took an Introduction to Engineering class and revisited this idea again. Teaming up with my classmates, Alondra Galindo and Cheryl Wang, we implemented CAD drawing, Arduino Coding, and Mechanical knowledge to make the idea come to life. <a href ="https://docs.google.com/presentation/d/19kxic3aHyIFKm2OJkrKqBN4dBMcqFIQzui0tOQ1nKsk/edit?usp=sharing">Presentation</a></p>
                     <div class="image-container">
                         <img src="siteIMG/Sock1.png" class="side-by-side-image">
                         <img src="siteIMG/Sock2.png" class="side-by-side-image">
@@ -427,6 +348,7 @@
 
 
         </section>
+
     </main>
 
     <footer>
@@ -434,6 +356,7 @@
             <li><a href="mailto:wj100@wellesley.edu" target="_blank"><i class="fas fa-envelope"></i></a></li>
             <li><a href="https://www.linkedin.com/in/iseewj/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://github.com/IseeJ" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://drive.google.com/file/d/1NDkIrR7VJQ2dOHivmEM8jOlAyyucatvf/view?usp=sharing" target="_blank"><i class="fas fa-file"></i></a></li>
         </ul>
         <p>Tel. +1 781 742 0586 | Wellesley, MA</p>
         <p>&copy; 2024 I-see Warisa Jaidee</p>
@@ -441,52 +364,11 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            showTab('art'); // Show project tab by default
-            const slider = document.getElementById('slider');
-        const imageDisplay = document.getElementById('current-image');
-        const descriptionBox = document.getElementById('slide-description');
-        const stepIndicators = document.querySelectorAll('.step-indicator span');
+            showTab('art'); 
 
-        const images = [
-            'siteIMG/test.jpg',
-            'siteIMG/test.jpg',
-            'siteIMG/test.jpg',
-            'siteIMG/test.jpg',
-            'siteIMG/test.jpg'
-        ];
-
-        const descriptions = [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            'Description for Slide 2',
-            'Description for Slide 3',
-            'Description for Slide 4',
-            'Description for Slide 5'
-        ];
-
-        slider.addEventListener('input', () => {
-            const value = slider.value;
-            imageDisplay.style.opacity = 0;
-            setTimeout(() => {
-                imageDisplay.src = images[value];
-                imageDisplay.style.opacity = 1;
-                descriptionBox.textContent = descriptions[value];
-            }, 300);
-
-            // Update step indicator active state
-            stepIndicators.forEach((step, index) => {
-                step.classList.toggle('active', index == value);
-            });
         });
 
-        // Click on step indicator to change slide
-        stepIndicators.forEach((step, index) => {
-            step.addEventListener('click', () => {
-                slider.value = index;
-                slider.dispatchEvent(new Event('input'));
-            });
-        });
-        });
-
+        //show tabs
         function showTab(tabName) {
         event.preventDefault();
 
@@ -516,15 +398,7 @@
             });
         }
 
-        const gallery = document.querySelector('.scrolling-gallery');
 
-        gallery.addEventListener('mouseover', () => {
-            gallery.style.animationPlayState = 'paused';
-        });
-
-        gallery.addEventListener('mouseout', () => {
-            gallery.style.animationPlayState = 'running';
-        });
 
         function openInNewTab(imageSrc) {
             window.open(imageSrc, '_blank');
