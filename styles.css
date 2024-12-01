@@ -176,6 +176,17 @@ main {
     margin: 0 auto;
 }
 
+.article-img {
+    object-fit: contain;
+    max-width: 100%; 
+  }
+
+  @media (max-width: 768px) {
+    .article-img {
+      height: auto;   
+      max-height: 150px; 
+    }
+}
 
 
 

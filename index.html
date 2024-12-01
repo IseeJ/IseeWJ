@@ -33,43 +33,9 @@
     <audio id="clickSound" src="click.mp3"></audio>
 
     <main>
-        
-
-        <section id="article1" class="tab-content" style="display:none; ">
-            <span class="back-arrow" onclick="showTab('research')">&#8592; Back</span>
-            <div class="p-container" style="background-color: #ffffff;;">
-                <img src="article1.jpg">
-                <p>Description1</p>
-            </div>
-        </section>
-        <section id="article2" class="tab-content" style="display:none;">
-            <span class="back-arrow" onclick="showTab('research')">&#8592; Back</span>
-            <div class="p-container" style="background-color: #f9f9f9;">
-                <img src="article1.jpg">
-                <p>Description2</p>
-            </div>
-        </section>
-        <section id="article3" class="tab-content" style="display:none;">
-            <span class="back-arrow" onclick="showTab('research')">&#8592; Back</span>
-            <div class="p-container" style="background-color: #f9f9f9;">
-                <img src="article1.jpg">
-                <p>Description3</p>
-            </div>
-        </section>
-        <section id="article4" class="tab-content" style="display:none;">
-            <span class="back-arrow" onclick="showTab('research')">&#8592; Back</span>
-            <div class="p-container" style="background-color: #f9f9f9;">
-                <img src="article1.jpg">
-                <p>Description4</p>
-            </div>
-        </section>
-
-
-
-
+    
         <!-- Art Section -->
         <section id="art" class="tab-content">
-            <!--p>I draw!</p-->
             
             <div class="p-container">
                 <h4>Particle Physics Comics published on <a href="https://www.nstda.or.th/sci2pub/category/columnist/isee/" target="_blank" rel="noopener noreferrer">Sarawit magazine</a></h4>
@@ -206,6 +172,24 @@
                
         </section>
 
+        <section id="article4" class="tab-content" style="display:none;">
+            <span class="back-arrow" onclick="showTab('research')">&#8592; Back</span>
+            <div class="p-container" style="background-color: #f9f9f9;">
+                <h3>Development of Liquid Argon Purification System for Neutrino Research</h3>
+                <img src="siteIMG/tl_lab.png" class="article-img">
+                <p>My thesis focuses on hands-on work to design and engineer the purifier and data analysis to assess its purifying performance using a homemade purity monitor. We built the Liquid Argon purifier and performed the regeneration process, a chemical reaction to activate water and oxygen reduction agents. The experimental setup was fine-tuned for optimized regeneration parameters, and initial data on removing oxygen and water contaminants have been collected.</p>
+                <p>My main contribution was designing and engineering the apparatus and developing the graphical user interface (GUI) for real-time data visualization</p>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+                    <img src="siteIMG/tl_diagram.png" class="article-img" style="height: 250px; object-fit: contain;">
+                    <img src="siteIMG/tl_pyQt5.gif" class="article-img" style="height: 250px; object-fit: contain;">
+                  </div>
+                <p>I am working on the purifier data analysis using measured water vapor concentration and detected signal for electron drift lifetime to validate our methods. Moving forward, my focus will be on completing and optimizing the database for the slow-control system as well as upscaling the chamber.</p>
+
+                <p>This involves further enhancing the remote monitoring system, integrating data from all sensors in the lab for seamless operation, and engineering the larger-scale apparatus for further Q-pix operations.</p>
+            </div>
+
+        </section>
+
         <!-- Research Section -->
         <section id="research" class="tab-content" style="display:none;">
             <div class="p-container">
@@ -217,7 +201,7 @@
                         <h3>Q-Pix</h3>
                         <p>2021 - 2023</p>
                     </div>
-                    <div class="person-card" onclick="showTab('article2')">
+                    <div class="person-card" onclick="openInNewTab('https://sites.google.com/upr.edu/uscms-pursue/')">
                         <img src="siteIMG/MAPSA.PNG">
                         <h3>CMS MaPSA</h3>
                         <p>2021 - 2023</p>
@@ -229,7 +213,7 @@
                     </div>
                     <div class="person-card" onclick="showTab('article4')">
                         <img src="siteIMG/QPIXLAR.PNG">
-                        <h3>Q-Pix LAr</h3>
+                        <h3>Honors Thesis</h3>
                         <p>2023 - Present</p>
                     </div>
                 </div>
@@ -270,18 +254,21 @@
                     <img src="siteIMG/SAQ.png">
                     <div class="caption" style = "line-height: 1.2;">
                       <h3>Ruhlman Conference, Wellesley College</h3>
-                      <p><li>April 26, 2023: Group panel on "Exploring The Universe From a Room With No Windows" <a href="https://docs.google.com/presentation/d/1q6S31qnQCdkUjAk4pswZKWvvU_YSc5mC1X5e0msTAJo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Presentation</a></li>
+                      <p><li>April 11, 2024: Poster presentation "Neutrino Hunters-Developing Experimental Prototypes to Test Neutrino Detection Techniques" <a href="https://drive.google.com/file/d/1U04N5RcroFs_K8qXqnIdTmuSu_3_KVfU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Poster</a></li>
                         <br>
-                        <li>April 11, 2024: Poster presentation "Neutrino Hunters-Developing Experimental Prototypes to Test Neutrino Detection Techniques" <a href="https://drive.google.com/file/d/1U04N5RcroFs_K8qXqnIdTmuSu_3_KVfU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Poster</a></li></p>
+                        <li>April 26, 2023: Group panel on "Exploring The Universe From a Room With No Windows" <a href="https://docs.google.com/presentation/d/1q6S31qnQCdkUjAk4pswZKWvvU_YSc5mC1X5e0msTAJo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Presentation</a></li>
+                        </p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="siteIMG/SRP.png">
                     <div class="caption" style = "line-height: 1.2;">
                       <h3>Tanner Conference, Wellesley College</h3>
-                      <p><li>November 14, 2023: Presentation on summer research experiences at Fermilab and Thai National Radio Telescope "From Subatomic Particles to the Vast Universe and Beyond…" <a href="https://docs.google.com/presentation/d/1MAvdtjC4u-fNZ-Oc4C4U__df1zNYNZ4soft58SW3xYI/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">Presentation</a></li>
+                      <p>
+                        <li>October 29, 2024: Presentation on Wellesley summer research program experiences, "Tiny Particles, Big Questions: Exploring Experimental Particle Physics" <a href="https://docs.google.com/presentation/d/16lHIMn8pX0ygZFRSo-879njpF898w2ZwIXsptkJ02AY/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">Presentation</a></li>                        
                         <br>
-                        <li>October 29, 2024: Presentation on Wellesley summer research program experiences, "Tiny Particles, Big Questions: Exploring Experimental Particle Physics" <a href="https://docs.google.com/presentation/d/16lHIMn8pX0ygZFRSo-879njpF898w2ZwIXsptkJ02AY/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">Presentation</a></li></p>
+                        <li>November 14, 2023: Presentation on summer research experiences at Fermilab and Thai National Radio Telescope "From Subatomic Particles to the Vast Universe and Beyond…" <a href="https://docs.google.com/presentation/d/1MAvdtjC4u-fNZ-Oc4C4U__df1zNYNZ4soft58SW3xYI/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">Presentation</a></li>
+                        </p>
                     </div>
                 </div>
               </div>
