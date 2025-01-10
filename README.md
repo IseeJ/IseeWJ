@@ -1,2 +1,2 @@
 # My website!
-https://iseej.github.io/IseeWJ/card/
+https://iseej.github.io/IseeWJ/
