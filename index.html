@@ -1,402 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I-see's Site</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="siteIMG/IzeeCon.PNG">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .lazy-img {
+            opacity: 0;
+            transition: opacity 0.4s ease-in;
+        }
+
+        .lazy-img.loaded {
+            opacity: 1;
+        }
+
+        .gallery-item,
+        .image-container .side-by-side-image,
+        .gallery-item:has(.loaded),
+        .loaded {
+            background: none;
+            animation: none;
+        }
+
+        .people-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        @media (max-width: 900px) {
+            .people-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .people-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .person-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-align: center;
+        }
+
+        .person-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .person-card h3 {
+            margin: 12px 0 8px;
+            min-height: 2.8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .person-card p {
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+    </style>
 </head>
-<script async src="//www.instagram.com/embed.js"></script>
+
 <body>
     <header>
         <nav>
-            <img 
-  src="siteIMG/izee.gif" 
-  alt="Icon" 
-  class="header-icon" 
-  id="headerIcon" 
-  onclick="hitGif(); showTab('research')" 
-  onmouseover="pauseGif()" 
-  onmouseleave="playGif()"
->
+            <img src="siteIMG/IzeeCon.PNG" alt="I-see's animated icon" class="header-icon" id="headerIcon" role="button"
+                tabindex="0" aria-label="Go to research page">
             <h1>I-see Warisa Jaidee</h1>
             <ul>
-                <li><a href="#research" onclick="showTab('research')">Research</a></li>
-                <li><a href="#art" onclick="showTab('art')">Art</a></li>
-                <li><a href="#project" onclick="showTab('project')">Project</a></li>
+                <li><a href="#research" data-tab="research">Research</a></li>
+                <li><a href="#art" data-tab="art">Art</a></li>
+                <li><a href="#project" data-tab="project">Project</a></li>
             </ul>
         </nav>
     </header>
-    <audio id="clickSound" src="click.mp3"></audio>
+    <audio id="clickSound" src="click.mp3" preload="none"></audio>
 
     <main>
-    
+
         <!-- Art Section -->
-        <section id="art" class="tab-content">
-            
+        <section id="art" class="tab-content" hidden>
+
             <div class="p-container">
-                <h4>Particle Physics Comics published on <a href="https://www.nstda.or.th/sci2pub/category/columnist/isee/" target="_blank" rel="noopener noreferrer">Sarawit magazine</a></h4>
+                <h4>Particle Physics Comics published on <a
+                        href="https://www.nstda.or.th/sci2pub/category/columnist/isee/" target="_blank"
+                        rel="noopener noreferrer">Sarawit magazine</a></h4>
 
                 <ul class="p-content">
                     <div class="image-container">
-                        <img src="siteIMG/C1.png" alt="Image 1" class="side-by-side-image" onclick= "openInNewTab('siteIMG/C1.png')">
-                        <img src="siteIMG/C2.png" alt="Image 2" class="side-by-side-image"   onclick= "openInNewTab('siteIMG/C2.png')">
-                        <img src="siteIMG/C4.png" alt="Image 2" class="side-by-side-image"   onclick= "openInNewTab('siteIMG/C4.png')">
-                </div>
-        
+                        <img data-src="siteIMG/C1.png" alt="Particle Physics Comic 1"
+                            class="side-by-side-image lazy-img clickable" data-href="siteIMG/C1.png">
+                        <img data-src="siteIMG/C2.png" alt="Particle Physics Comic 2"
+                            class="side-by-side-image lazy-img clickable" data-href="siteIMG/C2.png">
+                        <img data-src="siteIMG/C4.png" alt="Particle Physics Comic 3"
+                            class="side-by-side-image lazy-img clickable" data-href="siteIMG/C4.png">
+                    </div>
+                </ul>
+
                 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
                     <div style="flex: 1 1 45%;">
-                        <h4>2024 <a href="https://sites.bc.edu/cuwip/">APS Conference for Undergraduate Women and Gender Minorities (CUWiP)</a></h4>
+                        <h4>2024 <a href="https://sites.bc.edu/cuwip/">APS Conference for Undergraduate Women and Gender
+                                Minorities (CUWiP)</a></h4>
                         <div class="gallery5" style="display: flex; gap: 10px;">
                             <div class="gallery-item" style="flex: 1;">
-                                <img src="siteIMG/Art/A16.png" style="width: 100%; height: auto;">
+                                <img data-src="siteIMG/Art/A16.png" alt="CUWiP artwork 1" class="lazy-img"
+                                    style="width: 100%; height: auto;">
                             </div>
                             <div class="gallery-item" style="flex: 1;">
-                                <img src="siteIMG/Art/A17.png" style="width: 100%; height: auto;">
+                                <img data-src="siteIMG/Art/A17.png" alt="CUWiP artwork 2" class="lazy-img"
+                                    style="width: 100%; height: auto;">
                             </div>
                         </div>
                     </div>
                     <div style="flex: 1 1 45%;">
-                        <h4>2024 <a href="https://niriss.github.io/">CAnadian NIRISS Unbiased Cluster Survey (CANUCS)</a> meeting</h4>
+                        <h4>2024 <a href="https://niriss.github.io/">CAnadian NIRISS Unbiased Cluster Survey
+                                (CANUCS)</a> meeting</h4>
                         <div class="gallery5" style="display: flex; gap: 10px;">
                             <div class="gallery-item" style="flex: 1;">
-                                <img src="siteIMG/Art/A18.png" style="width: 100%; height: auto;">
+                                <img data-src="siteIMG/Art/A18.png" alt="CANUCS artwork 1" class="lazy-img"
+                                    style="width: 100%; height: auto;">
                             </div>
                             <div class="gallery-item" style="flex: 1;">
-                                <img src="siteIMG/Art/A19.png" style="width: 100%; height: auto;">
+                                <img data-src="siteIMG/Art/A19.png" alt="CANUCS artwork 2" class="lazy-img"
+                                    style="width: 100%; height: auto;">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-                
 
             <h4>Battat Lab and Q-Pix Consortium</h4>
             <div class="gallery5">
                 <div class="gallery-item">
-                    <img src="siteIMG/Art/A5.png">
+                    <img data-src="siteIMG/Art/A5.png" alt="Battat Lab art 1" class="lazy-img">
                 </div>
                 <div class="gallery-item">
-                    <img src="siteIMG/Art/A6.png">
+                    <img data-src="siteIMG/Art/A6.png" alt="Battat Lab art 2" class="lazy-img">
                 </div>
-                <div class="gallery-item" onclick= "openInNewTab('siteIMG/Art/A11.png')">
-                    <img src="siteIMG/Art/A11.png">
+                <div class="gallery-item clickable" data-href="siteIMG/Art/A11.png">
+                    <img data-src="siteIMG/Art/A11.png" alt="Q-Pix art 1" class="lazy-img">
                 </div>
                 <div class="gallery-item">
-                    <img src="siteIMG/Art/A12.png">
+                    <img data-src="siteIMG/Art/A12.png" alt="Q-Pix art 2" class="lazy-img">
                 </div>
             </div>
 
             <h4>Wellesley College class council and students organizations</h4>
             <div class="gallery5">
                 <div class="gallery-item">
-                    <img src="siteIMG/Art/A1.png" onclick = "openInNewTab('https://www.instagram.com/p/Cb7z4g_uw50/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
+                    <img data-src="siteIMG/Art/A1.png" alt="Class of 2025 Sweater design" class="lazy-img clickable"
+                        data-href="https://www.instagram.com/p/Cb7z4g_uw50/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
                     <p>Class of 2025 Sweater</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="siteIMG/Art/A3.png" onclick = "openInNewTab('https://www.instagram.com/p/CqG0ABIu4Qt/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
+                    <img data-src="siteIMG/Art/A3.png" alt="Class of 2025 Tote Bag design" class="lazy-img clickable"
+                        data-href="https://www.instagram.com/p/CqG0ABIu4Qt/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
                     <p>Class of 2025 Tote Bag</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="siteIMG/Art/A2.png">
+                    <img data-src="siteIMG/Art/A2.png" alt="Slater Center Logo" class="lazy-img">
                     <p>Slater Center Logo</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="siteIMG/Art/A13.png" onclick= "openInNewTab('https://www.instagram.com/p/Cq28JIaOrJR/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
+                    <img data-src="siteIMG/Art/A13.png" alt="SEASA logo" class="lazy-img clickable"
+                        data-href="https://www.instagram.com/p/Cq28JIaOrJR/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
                     <p>SEASA : Southeast Asian Student Association</p>
                 </div>
             </div>
-            
+
             <h4>A.S.T.R.O. club merchandise</h4>
             <div class="gallery5">
-
                 <div class="gallery-item">
-                    <img src="siteIMG/Art/A8.png"  onclick= "openInNewTab('https://www.instagram.com/p/Cx6vQwLOT0b/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
+                    <img data-src="siteIMG/Art/A8.png" alt="ASTRO merch 1" class="lazy-img clickable"
+                        data-href="https://www.instagram.com/p/Cx6vQwLOT0b/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
                 </div>
                 <div class="gallery-item">
-                    <img src="siteIMG/Art/A14.png" onclick= "openInNewTab('https://www.instagram.com/p/Cx6vQwLOT0b/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
+                    <img data-src="siteIMG/Art/A14.png" alt="ASTRO merch 2" class="lazy-img clickable"
+                        data-href="https://www.instagram.com/p/Cx6vQwLOT0b/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
                 </div>
                 <div class="gallery-item">
-                    <img src="siteIMG/Art/A7.png" onclick= "openInNewTab('https://www.instagram.com/p/Cx6vQwLOT0b/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
+                    <img data-src="siteIMG/Art/A7.png" alt="ASTRO merch 3" class="lazy-img clickable"
+                        data-href="https://www.instagram.com/p/Cx6vQwLOT0b/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
                 </div>
                 <div class="gallery-item">
-                    <img src="siteIMG/Art/A15.png" onclick= "openInNewTab('https://www.instagram.com/p/Cx6vQwLOT0b/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
+                    <img data-src="siteIMG/Art/A15.png" alt="ASTRO merch 4" class="lazy-img clickable"
+                        data-href="https://www.instagram.com/p/Cx6vQwLOT0b/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
                 </div>
             </div>
+
             <h4>Public Night Coloring Pages</h4>
             <div class="container2">
                 <div class="section2 left">
                     <div class="gallery6">
-                        <div class="gallery-item">
-                            <img src="siteIMG/Art/S1.png" onclick="openInNewTab('https://drive.google.com/drive/folders/1NH4ei8TILmYNg5I9cq5ySyOn1x5l5yTk?usp=sharing')">
+                        <div class="gallery-item clickable"
+                            data-href="https://drive.google.com/drive/folders/1NH4ei8TILmYNg5I9cq5ySyOn1x5l5yTk?usp=sharing">
+                            <img data-src="siteIMG/Art/S1.png" alt="Coloring page 1" class="lazy-img">
                         </div>
-                        <div class="gallery-item">
-                            <img src="siteIMG/Art/S2.png" onclick="openInNewTab('https://drive.google.com/drive/folders/1NH4ei8TILmYNg5I9cq5ySyOn1x5l5yTk?usp=sharing')">
+                        <div class="gallery-item clickable"
+                            data-href="https://drive.google.com/drive/folders/1NH4ei8TILmYNg5I9cq5ySyOn1x5l5yTk?usp=sharing">
+                            <img data-src="siteIMG/Art/S2.png" alt="Coloring page 2" class="lazy-img">
                         </div>
                     </div>
                 </div>
-            
                 <div class="section2 right">
-                    <div class="gallery-item">
-                        <img src="siteIMG/Art/S3.png" onclick="openInNewTab('https://drive.google.com/drive/folders/1NH4ei8TILmYNg5I9cq5ySyOn1x5l5yTk?usp=sharing')">
+                    <div class="gallery-item clickable"
+                        data-href="https://drive.google.com/drive/folders/1NH4ei8TILmYNg5I9cq5ySyOn1x5l5yTk?usp=sharing">
+                        <img data-src="siteIMG/Art/S3.png" alt="Coloring page 3" class="lazy-img">
                     </div>
                 </div>
             </div>
+
             <h4>Dr. Lamiya Mowla research group <a href="https://www.lamiyamowla.com/noor">website</a></h4>
             <div class="gallery5">
-            <div class="gallery-item"><img src="siteIMG/B3.PNG"></div>
-            <div class="gallery-item"><img src="siteIMG/B4.PNG"></div>
-            <div class="gallery-item"><img src="siteIMG/B11.PNG"></div>
-            <div class="gallery-item"><img src="siteIMG/B15.png"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B3.PNG" alt="Mowla group art 1" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B4.PNG" alt="Mowla group art 2" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B11.PNG" alt="Mowla group art 3" class="lazy-img">
+                </div>
+                <div class="gallery-item"><img data-src="siteIMG/B15.png" alt="Mowla group art 4" class="lazy-img">
+                </div>
             </div>
+
             <h4>MORE!!!</h4>
 
+            <iframe data-src="https://iseej.github.io/Card/" width="100%" height="500px" style="border: none;"
+                class="lazy-iframe" title="Interactive Card"></iframe>
 
-            <iframe src="https://iseej.github.io/Card/" width="100%" height="500px" style="border: none;"></iframe>
             <div class="gallery5">
-
-                <div class="gallery-item"><img src="siteIMG/B1.PNG" onclick="openInNewTab('https://store.line.me/stickershop/product/12379556/en')"></div>
-                <div class="gallery-item"><img src="siteIMG/ss1.png"></div>
-                <div class="gallery-item"><img src="siteIMG/ss2.png"></div>
-                <div class="gallery-item"><img src="siteIMG/B2.PNG"></div>
-                <div class="gallery-item"><img src="siteIMG/B12.PNG"></div>
-                <div class="gallery-item"><img src="siteIMG/B13.PNG"></div>
-                <div class="gallery-item"><img src="siteIMG/B14.PNG"></div>
-                <div class="gallery-item"><img src="siteIMG/B16.PNG"></div>
-                <div class="gallery-item"><img src="siteIMG/B5.PNG"></div>
-                <div class="gallery-item"><img src="siteIMG/B6.PNG"></div>
-                <div class="gallery-item"><img src="siteIMG/B7.PNG"></div>
-                <div class="gallery-item"><img src="siteIMG/B8.PNG"></div>
-                <div class="gallery-item"><img src="siteIMG/B9.PNG"></div>
-                <div class="gallery-item"><img src="siteIMG/B10.PNG"></div>
-                <div class="gallery-item"><img src="siteIMG/Q1.png"></div>
-                <div class="gallery-item"><img src="siteIMG/Q2.png"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B1.PNG" alt="LINE sticker" class="lazy-img clickable"
+                        data-href="https://store.line.me/stickershop/product/12379556/en"></div>
+                <div class="gallery-item"><img data-src="siteIMG/ss1.png" alt="Screenshot 1" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/ss2.png" alt="Screenshot 2" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B2.PNG" alt="Art piece 2" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B12.PNG" alt="Art piece 12" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B13.PNG" alt="Art piece 13" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B14.PNG" alt="Art piece 14" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B16.PNG" alt="Art piece 16" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B5.PNG" alt="Art piece 5" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B6.PNG" alt="Art piece 6" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B7.PNG" alt="Art piece 7" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B8.PNG" alt="Art piece 8" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B9.PNG" alt="Art piece 9" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/B10.PNG" alt="Art piece 10" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/Q1.png" alt="Q art 1" class="lazy-img"></div>
+                <div class="gallery-item"><img data-src="siteIMG/Q2.png" alt="Q art 2" class="lazy-img"></div>
             </div>
-    
-               
+
         </section>
 
-        <section id="article4" class="tab-content" style="display:none;">
-            <span class="back-arrow" onclick="showTab('research')">&#8592; Back</span>
+        <!-- Thesis -->
+        <section id="article4" class="tab-content" hidden>
+            <span class="back-arrow" role="button" tabindex="0" data-tab="research"
+                aria-label="Back to research">&#8592; Back</span>
             <div class="p-container" style="background-color: #f9f9f9;">
                 <h3>Development of Liquid Argon Purification System for Neutrino Research</h3>
-                <img src="siteIMG/tl_lab.png" class="article-img" style="height: 300px;">
-                <!--p>I have been working on demonstrating the performance of the Q-Pix readout prototype for neutrino research. My main contributions to the group include simulations and hands-on work to design, build, and test components of the apparatus for electronic testing of the readout circuit.</p>
-                <img src="siteIMG/T1.png" class="article-img" style="height: 300px;">
-                <p>During my sophomore year, I undertook an independent research project focusing on the simulation of electron trajectories. I simulated electron tracks through a Gas Electron Multiplier (GEM) and modeled electron diffusion under varying pressures and gas impurity levels. I utilized finite element analysis and computer-aided design to model field lines between the electrodes of the purity monitor to optimize its design and engineering dimensions.</p>
-                <img src="siteIMG/T3.png" class="article-img" style="height: 300px;"-->
-                <!--p>My senior honors thesis focuses on hands-on work to design and engineer the purifier and data analysis to assess its purifying performance using a homemade purity monitor. We built the Liquid Argon purifier and performed the regeneration process, a chemical reaction to activate water and oxygen reduction agents. The experimental setup was fine-tuned for optimized regeneration parameters, and initial data on removing oxygen and water contaminants have been collected.</p>
-                <p>My main contributions are designing and engineering the apparatus, and developing the graphical user interface (GUI) for real-time data visualization, available on GitHub <a href="https://github.com/IseeJ/PurifierGUI">Here</a>.</p>
-                <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-                    <img src="siteIMG/tl_diagram.png" class="article-img" style="height: 250px; object-fit: contain;">
-                    <img src="siteIMG/tl_pyQt5.gif" class="article-img" style="height: 250px; object-fit: contain;">
-                  </div-->
+                <img data-src="siteIMG/tl_lab.png" class="article-img lazy-img" style="height: 300px;"
+                    alt="Thesis lab photo">
 
                 <h3>Abstract:</h3>
                 <p style="text-align: left;">Liquid Argon Time Projection Chambers (LArTPC) are widely used for neutrino
-                    detection. Q-Pix collaboration focuses on improving neutrino event reconstruction
-                    through a 3D pixelated readout system, offering lower detection thresholds and im-
-                    proved spatial and energy resolution. To support the development of Q-Pix readout
-                    technology, our group at Wellesley is constructing a lab-scale LArTPC for prototype
-                    testing, which requires a dedicated liquid argon purification system. The purifier con-
-                    tains active copper and molecular sieves which eliminate oxygen and water, keeping
-                    electronegative contaminants at an extremely low level. The associated purity moni-
-                    tor measures the resulting purity of the liquid argon by monitoring the attenuation of
-                    charge signal. My thesis includes the construction of the liquid argon purification sys-
-                    tem, the implementation of a slow control and monitoring system with an integrated
-                    database, and the measurement of impurity concentration to evaluate the purifier’s
-                    performance.<a href ="https://iseej.github.io/BattatLab/"> Lab Website</a></p>  
-                <img src="siteIMG/roadmap.png" class="article-img" style="height: 300px;">
-                <br>
-               
-                <!--p>I am working on the purifier data analysis using measured water vapor concentration to verify the regeneration process. Moving forward, my focus will be on completing and optimizing the database for the slow-control system. I will develop a data analysis pipeline electron drift lifetime measurement and purity analysis.</p>
-                <p>This involves further enhancing the remote monitoring system, integrating data from all sensors in the lab for seamless operation, and upscaling the apparatus for further Q-pix operations.</p-->
+                    detection. The Q-Pix collaboration focuses on improving neutrino event reconstruction through a 3D
+                    pixelated readout system, offering lower detection thresholds and improved spatial and energy
+                    resolution. To support the development of the Q-Pix technology, our group at Wellesley is
+                    constructing a lab-scale LArTPC for prototype testing, which requires a dedicated liquid argon
+                    purification system. The purifier contains active copper and molecular sieves, which eliminate
+                    oxygen and water, keeping electronegative contaminants at an extremely low level. The associated
+                    purity monitor measures the resulting purity of the liquid argon by monitoring the attenuation of
+                    the charge signal due to electronegative impurities. My thesis describes the construction of the
+                    liquid argon purification system, the implementation of a slow control and monitoring system with an
+                    integrated database, and the measurement of impurity concentration to evaluate the purifier’s
+                    performance. <a href="https://iseej.github.io/BattatLab/">Lab Website</a></p>
+                <img data-src="siteIMG/roadmap.png" class="article-img lazy-img" style="height: 300px;"
+                    alt="Research roadmap">
             </div>
-
         </section>
 
-        <!-- Research Section -->
-        <section id="research" class="tab-content" style="display:none;">
+        <section id="research" class="tab-content" hidden>
             <div class="p-container">
-                <!--h2>Interests</h2-->
-                <p>Particle Physics Experiment | Neutrino | Dark Matter | Detectors | Instrumentation R&D</p>
+                <p>Particle Physics Experiment | Neutrino | Dark Matter | Detectors R&amp;D</p>
                 <div class="people-container">
-                    <div class="person-card"  onclick= "openInNewTab('https://www.qpix.work/')">
-                        <img src="siteIMG/Qpix.PNG">
-                        <h3>Q-Pix</h3>
-                        <p>2021 - 2023</p>
+                    <div class="person-card" data-tab="article4" role="button" tabindex="0">
+                        <img data-src="siteIMG/BREAD.PNG" alt="Honors Thesis" class="lazy-img">
+                        <h3>BREAD collaboration</h3>
+                        <p>2025 - Present</p>
                     </div>
-                    <div class="person-card" onclick="openInNewTab('https://sites.google.com/upr.edu/uscms-pursue/')">
-                        <img src="siteIMG/MAPSA.PNG">
-                        <h3>CMS PURSUE</h3>
-                        <p>2023 - 2024</p>
+                    <div class="person-card clickable" data-href="https://www.qpix.work/">
+                        <img data-src="siteIMG/Qpix.PNG" alt="Q-Pix project" class="lazy-img">
+                        <h3>Q-Pix consortium</h3>
+                        <p>2021 - 2025</p>
                     </div>
-                    <div class="person-card" onclick="openInNewTab('https://tess.mit.edu/followup/')">
-                        <img src="siteIMG/TESSfollowup.PNG">
+                    <div class="person-card clickable" data-href="https://tess.mit.edu/followup/">
+                        <img data-src="siteIMG/TESSfollowup.PNG" alt="TESS follow-up project" class="lazy-img">
                         <h3>TESS follow-up</h3>
                         <p>2022 - 2025</p>
                     </div>
-                    <div class="person-card" onclick="showTab('article4')">
-                        <img src="siteIMG/QPIXLAR.PNG">
+                    <div class="person-card clickable" data-href="https://sites.google.com/upr.edu/uscms-pursue/">
+                        <img data-src="siteIMG/MAPSA.PNG" alt="CMS PURSUE project" class="lazy-img">
+                        <h3>CMS PURSUE internship</h3>
+                        <p>2023 - 2024</p>
+                    </div>
+                    <!--div class="person-card" data-tab="article4" role="button" tabindex="0">
+                        <img data-src="siteIMG/QPIXLAR.PNG" alt="Honors Thesis" class="lazy-img">
                         <h3>Honors Thesis</h3>
                         <p>2023 - 2025</p>
-                    </div>
+                    </div-->
                 </div>
-        
             </div>
+
             <div class="p-container">
                 <h2>Publications</h2>
                 <ul class="p-content">
-                    <li>June 2024 | N. Hoch, et al. | <a href="https://doi.org/10.1088/1748-0221/19/06/P06007" target="_blank">First operation of a multi-channel Q-Pix prototype: measuring transverse electron diffusion in a gas time projection chamber</a>, Journal of Instrumentation</li>
-                    <li>2016 - Present | IW. Jaidee | <a href="https://www.nstda.or.th/sci2pub/category/columnist/isee/">”Science meets Art”</a> column featuring monthly science articles and comics on <a href="https://www.nstda.or.th/sci2pub/sarawit/">Sarawit Magazine</a>,
-                        National Science and Technology Development Agency, Thailand <a href="https://www.nstda.or.th/en/">(NSTDA)</a></li>
+                    <li>May 2025 | I.W. Jaidee | <a href="#article4" data-tab="article4">Development of Liquid Argon
+                            Purification System for Neutrino Research</a>, Honors Thesis, Wellesley College</li>
+                    <li>June 2024 | N. Hoch, et al. | <a href="https://doi.org/10.1088/1748-0221/19/06/P06007"
+                            target="_blank" rel="noopener noreferrer">First operation of a multi-channel Q-Pix
+                            prototype: measuring transverse electron diffusion in a gas time projection chamber</a>,
+                        Journal of Instrumentation</li>
+                    <li>2016 - Present | I.W. Jaidee | <a
+                            href="https://www.nstda.or.th/sci2pub/category/columnist/isee/" target="_blank"
+                            rel="noopener noreferrer">"Science meets Art"</a> column featuring monthly science articles
+                        and comics on <a href="https://www.nstda.or.th/sci2pub/sarawit/" target="_blank"
+                            rel="noopener noreferrer">Sarawit Magazine</a>,
+                        National Science and Technology Development Agency, Thailand <a
+                            href="https://www.nstda.or.th/en/" target="_blank" rel="noopener noreferrer">(NSTDA)</a>
+                    </li>
                 </ul>
             </div>
 
-        <h2>Talks / Posters</h2>
+            <h2>Talks / Posters</h2>
+            <div class="p-container">
+            <ul class="p-content">
+                <li>March 17, 2026 | SlicedBREAD: Enhancing Axion Detection Efficiency in BREAD with Dielectric Stacks | <a href="https://summit.aps.org/" target="_blank" rel="noopener noreferrer">APS Global Physics Summit 2026</a> | Denver, CO</li>
+                <li>January 14, 2026 | SlicedBREAD: Idea and Sensitivity | <a href="https://harvard-neutrinos.rc.fas.harvard.edu/event/32/" target="_blank" rel="noopener noreferrer">BREAD Collaboration Workshop</a> | Cambridge, MA </li>
+                <li>March 13, 2025 | Development of a Small-Scale Liquid Argon Time Projection Chamber for Neutrino Research at Wellesley College | <a href="https://www.aps.org/events/2025/joint-meeting" target="_blank" rel="noopener noreferrer">APS Global Physics Summit 2025</a> | Anaheim, CA </li>
+            </ul>
+            </div>
             <div class="gallery4">
                 <div class="gallery-item">
-                <img src="siteIMG/poster2.png" alt="Research Poster 1" onclick="openInNewTab('siteIMG/poster2.png')">
-                  <div class="caption"  style = "line-height: 1.2;">
-                    <h4>Quality assurance of Macro-Pixel Sub-Assemblies (MaPSA) before installation in CMS</h4>
-                    <h5><a href="https://sites.google.com/upr.edu/uscms-pursue/">2023 U.S. CMS PURSUE internship</a>, <a href="https://sites.bu.edu/bucuwip2023/">2023 APS CUWiP Poster Presentation</a></h5>
-                    <p>Advisor: <a href="https://jdickins.web.cern.ch/">Dr. Jennet Dickinson</a>, Fermilab 
-                        <br>The High Luminosity upgrade for CERN's LHC will replace CMS silicon tracking detectors with PS modules featuring the Macro-Pixel Sub-Assembly (MaPSA). I developed database system for MaPSA quality assurance, enabling performance tracking of each MaPSA's pixel through an accessible database before installation into the CMS outer tracker.</p>
-                  </div>
-                </div>
-            
-                <div class="gallery-item">
-                  <img src="siteIMG/poster3.png" alt="Research Poster 2" onclick="openInNewTab('siteIMG/poster3.png')">
-                  <div class="caption"  style = "line-height: 1.2;">
-                    <h4>Development of a Small-Scale Liquid Argon Purification System for Neutrino Research</h4>
-                    <h5><a href="https://www.wellesley.edu/news/a-summer-of-science">Science Center Summer Research Program 2024</a></h5>
-                    <p>Advisor: <a href="https://www.wellesley.edu/people/james-battat">Dr. James Battat</a>, Wellesley College
-                        <br>We developed a small-scale LAr purification system for neutrino detection, using active copper and molecular sieves to eliminate oxygen and water, ensuring low contaminant levels. I constructed the apparatus, developed data acquisition software, and ran the regeneration process to prepare the purifier.
-                        </p>
-                  </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="siteIMG/SAQ.png">
-                    <div class="caption" style = "line-height: 1.2;">
-                      <h3>Ruhlman Conference, Wellesley College</h3>
-                      <li>April 16, 2025: Presentation on "Development of a Small Scale Liquid Argon Purification System for Neutrino Research" <a href="https://docs.google.com/presentation/d/1n2NMCqQEAHzP21zCGJA9eXvvxYFeZYpaacv4H96oOIA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Presentation</a></li></li>
-                        <br>
-                      <li>April 11, 2024: Poster presentation "Neutrino Hunters-Developing Experimental Prototypes to Test Neutrino Detection Techniques" <a href="https://drive.google.com/file/d/1U04N5RcroFs_K8qXqnIdTmuSu_3_KVfU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Poster</a></li>
-                        <br>
-                        <li>April 26, 2023: Group panel on "Exploring The Universe From a Room With No Windows" <a href="https://docs.google.com/presentation/d/1q6S31qnQCdkUjAk4pswZKWvvU_YSc5mC1X5e0msTAJo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Presentation</a></li>
-                    
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="siteIMG/SRP.png">
-                    <div class="caption" style = "line-height: 1.2;">
-                      <h3>Tanner Conference, Wellesley College</h3>
-                      <p>
-                        <li>October 29, 2024: Presentation on Wellesley summer research program experiences, "Tiny Particles, Big Questions: Exploring Experimental Particle Physics" <a href="https://docs.google.com/presentation/d/16lHIMn8pX0ygZFRSo-879njpF898w2ZwIXsptkJ02AY/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">Presentation</a></li>                        
-                        <br>
-                        <li>November 14, 2023: Presentation on summer research experiences at Fermilab and Thai National Radio Telescope "From Subatomic Particles to the Vast Universe and Beyond…" <a href="https://docs.google.com/presentation/d/1MAvdtjC4u-fNZ-Oc4C4U__df1zNYNZ4soft58SW3xYI/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">Presentation</a></li>
+                    <img data-src="siteIMG/poster2.png" alt="MaPSA Research Poster" class="lazy-img clickable"
+                        data-href="siteIMG/poster2.png">
+                    <div class="caption" style="line-height: 1.2;">
+                        <h4>Quality assurance of Macro-Pixel Sub-Assemblies (MaPSA) before installation in CMS</h4>
+                        <h5><a href="https://sites.google.com/upr.edu/uscms-pursue/" target="_blank"
+                                rel="noopener noreferrer">2023 U.S. CMS PURSUE internship</a>, <a
+                                href="https://sites.bu.edu/bucuwip2023/" target="_blank" rel="noopener noreferrer">2023
+                                APS CUWiP Poster Presentation</a></h5>
+                        <p>Advisor: <a href="https://jdickins.web.cern.ch/" target="_blank"
+                                rel="noopener noreferrer">Dr. Jennet Dickinson</a>, Fermilab
+                            <br>The High Luminosity upgrade for CERN's LHC will replace CMS silicon tracking detectors
+                            with PS modules featuring the Macro-Pixel Sub-Assembly (MaPSA). I developed database system
+                            for MaPSA quality assurance, enabling performance tracking of each MaPSA's pixel through an
+                            accessible database before installation into the CMS outer tracker.
                         </p>
                     </div>
                 </div>
-              </div>
 
-              <div class="p-container">
-              <h2>Skills</h2>
-              <ul style="text-align: left; font-size: 18px; line-height: 1.5;">
-                <p><li><strong>Computing:</strong> Python, MATLAB, Arduino IDE, Unix shell, Finite Element Analysis (Gmsh, FreeFEM, Elmer), Computer-aided Design (OnShape, Autodesk Fusion), JavaScript</li>
-                <li><strong>Others:</strong> Graphic design, Website development</li>
-              </ul></p>
-              </div>
-              
-              </div>
-              
+                <div class="gallery-item">
+                    <img data-src="siteIMG/poster3.png" alt="LAr Purification Poster" class="lazy-img clickable"
+                        data-href="siteIMG/poster3.png">
+                    <div class="caption" style="line-height: 1.2;">
+                        <h4>Development of a Small-Scale Liquid Argon Purification System for Neutrino Research</h4>
+                        <h5><a href="https://www.wellesley.edu/news/a-summer-of-science" target="_blank"
+                                rel="noopener noreferrer">Science Center Summer Research Program 2024</a></h5>
+                        <p>Advisor: <a href="https://www.wellesley.edu/people/james-battat" target="_blank"
+                                rel="noopener noreferrer">Dr. James Battat</a>, Wellesley College
+                            <br>We developed a small-scale LAr purification system for neutrino detection, using active
+                            copper and molecular sieves to eliminate oxygen and water, ensuring low contaminant levels.
+                            I constructed the apparatus, developed data acquisition software, and ran the regeneration
+                            process to prepare the purifier.
+                        </p>
+                    </div>
+                </div>
 
+                <div class="gallery-item">
+                    <img data-src="siteIMG/SAQ.png" alt="Ruhlman Conference" class="lazy-img">
+                    <div class="caption" style="line-height: 1.2;">
+                        <h3>Ruhlman Conference, Wellesley College</h3>
+                        <ul>
+                            <li>April 16, 2025: Presentation on "Development of a Small Scale Liquid Argon Purification
+                                System for Neutrino Research" <a
+                                    href="https://docs.google.com/presentation/d/1n2NMCqQEAHzP21zCGJA9eXvvxYFeZYpaacv4H96oOIA/edit?usp=sharing"
+                                    target="_blank" rel="noopener noreferrer">Presentation</a></li>
+                            <li>April 11, 2024: Poster presentation "Neutrino Hunters-Developing Experimental Prototypes
+                                to Test Neutrino Detection Techniques" <a
+                                    href="https://drive.google.com/file/d/1U04N5RcroFs_K8qXqnIdTmuSu_3_KVfU/view?usp=drive_link"
+                                    target="_blank" rel="noopener noreferrer">Poster</a></li>
+                            <li>April 26, 2023: Group panel on "Exploring The Universe From a Room With No Windows" <a
+                                    href="https://docs.google.com/presentation/d/1q6S31qnQCdkUjAk4pswZKWvvU_YSc5mC1X5e0msTAJo/edit?usp=sharing"
+                                    target="_blank" rel="noopener noreferrer">Presentation</a></li>
+                        </ul>
+                    </div>
+                </div>
 
+                <div class="gallery-item">
+                    <img data-src="siteIMG/SRP.png" alt="Tanner Conference" class="lazy-img">
+                    <div class="caption" style="line-height: 1.2;">
+                        <h3>Tanner Conference, Wellesley College</h3>
+                        <ul>
+                            <li>October 29, 2024: Presentation on Wellesley summer research program experiences, "Tiny
+                                Particles, Big Questions: Exploring Experimental Particle Physics" <a
+                                    href="https://docs.google.com/presentation/d/16lHIMn8pX0ygZFRSo-879njpF898w2ZwIXsptkJ02AY/edit?usp=drive_link"
+                                    target="_blank" rel="noopener noreferrer">Presentation</a></li>
+                            <li>November 14, 2023: Presentation on summer research experiences at Fermilab and Thai
+                                National Radio Telescope "From Subatomic Particles to the Vast Universe and Beyond…" <a
+                                    href="https://docs.google.com/presentation/d/1MAvdtjC4u-fNZ-Oc4C4U__df1zNYNZ4soft58SW3xYI/edit?usp=drive_link"
+                                    target="_blank" rel="noopener noreferrer">Presentation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-container">
+                <h2>Skills</h2>
+                <ul style="text-align: left; font-size: 18px; line-height: 1.5;">
+                    <li><strong>Computing:</strong> Python, MATLAB, Arduino IDE, Unix shell, Finite Element Analysis
+                        (Gmsh, FreeFEM, Elmer), Computer-aided Design (OnShape, Autodesk Fusion), JavaScript</li>
+                    <li><strong>Others:</strong> Graphic design, Website development</li>
+                </ul>
+            </div>
         </section>
 
         <!-- Project Section -->
-        <section id="project" class="tab-content" style="display:none;">
-            
+        <section id="project" class="tab-content" hidden>
+
             <div class="p-container">
                 <h2>Cosmos Persona</h2>
                 <ul class="p-content">
-                    <p>I made an astronomy-themed personality quiz using JavaScript, HTML, and CSS as an ice-breaking activity and learning resource.
-                        <a href='https://iseej.github.io/CosmosPersona/'>Play!</a>
+                    <p>I made an astronomy-themed personality quiz using JavaScript, HTML, and CSS as an ice-breaking
+                        activity and learning resource.
+                        <a href="https://iseej.github.io/CosmosPersona/" target="_blank"
+                            rel="noopener noreferrer">Play!</a> <br>
+                        Check out other personality quizzes <a href="https://iseelibrary.vercel.app/projects.html"
+                            target="_blank" rel="noopener noreferrer">Here!</a>
                     </p>
                     <div class="image-container">
-                        <img src="siteIMG/Cosmos0.gif" alt="Image 1" class="side-by-side-image" onclick= "openInNewTab('https://iseej.github.io/CosmosPersona/')">
-                        <img src="siteIMG/cosmos1_1.png" alt="Image 2" class="side-by-side-image"   onclick= "openInNewTab('https://www.instagram.com/p/C4l6R75vHGG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
-                        <img src="siteIMG/cosmos1_2.png" alt="Image 2" class="side-by-side-image"   onclick= "openInNewTab('https://iseej.github.io/CosmosPersona/Info/')">
+                        <img data-src="siteIMG/Cosmos0.gif" alt="Cosmos Persona demo"
+                            class="side-by-side-image lazy-img clickable"
+                            data-href="https://iseej.github.io/CosmosPersona/">
+                        <img data-src="siteIMG/cosmos1_1.png" alt="Cosmos Persona screenshot 1"
+                            class="side-by-side-image lazy-img clickable"
+                            data-href="https://www.instagram.com/p/C4l6R75vHGG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
+                        <img data-src="siteIMG/cosmos1_2.png" alt="Cosmos Persona screenshot 2"
+                            class="side-by-side-image lazy-img clickable"
+                            data-href="https://iseej.github.io/CosmosPersona/Info/">
                     </div>
-                    </ul>  
+                </ul>
             </div>
             <br>
 
             <div class="p-container">
                 <h2>Focus Bot</h2>
                 <ul class="p-content">
-                    <p>In PHYS210: Experimental Techniques class, I made 'Focus Bot', a robot that will tap you if you spend too much time on your phone. I used Arduino IDE, pressure sensors, and servo motors! <a href="https://drive.google.com/file/d/1MzevpsNiB743qQhB4HaTsmLs5vbNmN05/view?usp=sharing">Video</a></p>
+                    <p>In PHYS210: Experimental Techniques class, I made 'Focus Bot', a robot that will tap you if you
+                        spend too much time on your phone. I used Arduino IDE, pressure sensors, and servo motors! <a
+                            href="https://drive.google.com/file/d/1MzevpsNiB743qQhB4HaTsmLs5vbNmN05/view?usp=sharing"
+                            target="_blank" rel="noopener noreferrer">Video</a></p>
                     <div class="image-container">
-                        <img src="siteIMG/Bot2.gif" class="side-by-side-image">
-                        <img src="siteIMG/Bot1.png" class="side-by-side-image">
-                        <img src="siteIMG/Bot3.gif" class="side-by-side-image" onclick= "openInNewTab('https://youtu.be/FvTBQnEOhN0?si=Py-8KybyHlgVWt8Z')">
-                    </div>
-            </div>
-            <br>
-            <div class="p-container">
-                <h2>Tickle Alarm Socks</h2>
-                <ul class="p-content">
-                    <!--p>I shared bedroom with my sister. She has to wake up earlier than me for school, and her loud alarm also wakes me up as well. I sketched an idea to make a silent alarm, waking her up by tickling her feet. In 2021, I took an Introduction to Engineering class and revisited this idea again. </p-->
-                        <p>Teaming up with my classmates, Alondra Galindo and Cheryl Wang for Engineering class final project, we implemented CAD drawing, Arduino Coding, and Mechanical knowledge to make a silent alarm which tickles your feet to wake you up. <a href ="https://docs.google.com/presentation/d/19kxic3aHyIFKm2OJkrKqBN4dBMcqFIQzui0tOQ1nKsk/edit?usp=sharing">Presentation</a></p>
-                    <div class="image-container">
-                        <img src="siteIMG/Sock1.png" class="side-by-side-image">
-                        <img src="siteIMG/Sock2.png" class="side-by-side-image">
-                        <img src="siteIMG/Sock3.png" class="side-by-side-image">
+                        <img data-src="siteIMG/Bot2.gif" alt="Focus Bot demo" class="side-by-side-image lazy-img">
+                        <img data-src="siteIMG/Bot1.png" alt="Focus Bot photo" class="side-by-side-image lazy-img">
+                        <img data-src="siteIMG/Bot3.gif" alt="Focus Bot in action"
+                            class="side-by-side-image lazy-img clickable"
+                            data-href="https://youtu.be/FvTBQnEOhN0?si=Py-8KybyHlgVWt8Z">
                     </div>
                 </ul>
             </div>
             <br>
+
+            <div class="p-container">
+                <h2>Tickle Alarm Socks</h2>
+                <ul class="p-content">
+                    <p>Teaming up with my classmates, Alondra Galindo and Cheryl Wang for Engineering class final
+                        project, we implemented CAD drawing, Arduino Coding, and Mechanical knowledge to make a silent
+                        alarm which tickles your feet to wake you up. <a
+                            href="https://docs.google.com/presentation/d/19kxic3aHyIFKm2OJkrKqBN4dBMcqFIQzui0tOQ1nKsk/edit?usp=sharing"
+                            target="_blank" rel="noopener noreferrer">Presentation</a></p>
+                    <div class="image-container">
+                        <img data-src="siteIMG/Sock1.png" alt="Tickle Alarm concept"
+                            class="side-by-side-image lazy-img">
+                        <img data-src="siteIMG/Sock2.png" alt="Tickle Alarm build" class="side-by-side-image lazy-img">
+                        <img data-src="siteIMG/Sock3.png" alt="Tickle Alarm final" class="side-by-side-image lazy-img">
+                    </div>
+                </ul>
+            </div>
+            <br>
+
             <div class="p-container">
                 <h2>Cosmology Creative Project</h2>
                 <ul class="p-content">
                 </ul>
             </div>
             <br>
+
             <div class="p-container">
-                <iframe 
-                    width="560" 
-                    height="315" 
-                    src="https://www.youtube.com/embed/6CWVfGlI1aA?start=182" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
+                <iframe width="560" height="315" data-src="https://www.youtube.com/embed/6CWVfGlI1aA?start=182"
+                    class="lazy-iframe" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen title="Cosmology creative project video">
                 </iframe>
             </div>
-            <div class="p-container">
-                <iframe src="https://iseej.github.io/Boink/" frameborder="0"></iframe>
-            </div>
 
-                        
-            <div class="p-container">
+            <!--div class="p-container">
+                <iframe data-src="https://iseej.github.io/Boink/" class="lazy-iframe" frameborder="0" title="Boink game"></iframe>
+            </div-->
+
+            <!--div class="p-container">
                 <h2>Love Pawsona</h2>
                 <ul class="p-content">
-                        <a href='https://iseej.github.io/LovePawsona/'>Play!</a>
-
+                    <a href="https://iseej.github.io/LovePawsona/" target="_blank" rel="noopener noreferrer">Play!</a>
                     <div class="image-container">
-                        <img src="siteIMG/Paw1.png" alt="Image 1" class="side-by-side-image" onclick= "openInNewTab('https://iseej.github.io/LovePawsona/')">
-                        <img src="siteIMG/Paw2.png" alt="Image 2" class="side-by-side-image"   onclick= "openInNewTab('https://www.instagram.com/p/DGHRIYCMcOv/')">
-                        <img src="siteIMG/Paw3.png" alt="Image 2" class="side-by-side-image"   onclick= "openInNewTab('https://iseej.github.io/LovePawsona/about.html')">
+                        <img data-src="siteIMG/Paw1.png" alt="Love Pawsona screenshot 1" class="side-by-side-image lazy-img clickable" data-href="https://iseej.github.io/LovePawsona/">
+                        <img data-src="siteIMG/Paw2.png" alt="Love Pawsona screenshot 2" class="side-by-side-image lazy-img clickable" data-href="https://www.instagram.com/p/DGHRIYCMcOv/">
+                        <img data-src="siteIMG/Paw3.png" alt="Love Pawsona screenshot 3" class="side-by-side-image lazy-img clickable" data-href="https://iseej.github.io/LovePawsona/about.html">
                     </div>
-                    </ul>  
-            </div>
-
-
-
-
-
+                </ul>
+            </div-->
 
         </section>
 
@@ -404,72 +539,170 @@
 
     <footer>
         <ul class="socials">
-            <li><a href="mailto:isee_jaidee@g.harvard.edu" target="_blank"><i class="fas fa-envelope"></i></a></li>
-            <li><a href="https://github.com/IseeJ" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/iseewj/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="mailto:isee_jaidee@g.harvard.edu" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://github.com/IseeJ" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/iseewj/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
         </ul>
         <p>Tel. +1 781 742 0586 | Cambridge, MA</p>
-        <p>&copy; 2024 I-see Warisa Jaidee</p>
+        <p>&copy; 2024 - 2026 I-see Warisa Jaidee</p>
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            showTab('project');  //default home page
+        (function () {
+            'use strict';
 
-        });
+            const DEFAULT_TAB = 'research';
+            const GIF_STATIC = 'siteIMG/IzeeCon.PNG';
+            const GIF_ANIMATED = 'siteIMG/izee.gif';
+            const GIF_HIT = 'siteIMG/izee2.gif';
 
-        //show tabs
-        function showTab(tabName) {
-        event.preventDefault();
+            const headerIcon = document.getElementById('headerIcon');
+            const clickSound = document.getElementById('clickSound');
+            const allTabs = document.querySelectorAll('.tab-content');
+            const navLinks = document.querySelectorAll('nav ul a[data-tab]');
 
-        const tabs = document.querySelectorAll('.tab-content');
-        tabs.forEach(tab => {
-        tab.style.display = 'none';
-        });
+            const lazyObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
 
-        const selectedTab = document.getElementById(tabName);
-        selectedTab.style.display = 'block';
+                    const el = entry.target;
 
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-        });
-        const activeLink = document.querySelector(`nav a[href="#${tabName}"]`);
-        activeLink.classList.add('active');
-        }
+                    if (el.tagName === 'IMG' && el.dataset.src) {
+                        el.src = el.dataset.src;
+                        el.removeAttribute('data-src');
+                        el.addEventListener('load', function () {
+                            el.classList.add('loaded');
+                        }, { once: true });
 
-        function highlightActiveTab(activeTab) {
-            const links = document.querySelectorAll('nav a');
-            links.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === activeTab) {
-                    link.classList.add('active');
+                        if (el.complete) el.classList.add('loaded');
+                    }
+
+                    if (el.tagName === 'IFRAME' && el.dataset.src) {
+                        el.src = el.dataset.src;
+                        el.removeAttribute('data-src');
+                    }
+
+                    lazyObserver.unobserve(el);
+                });
+            }, {
+                rootMargin: '200px 0px',
+                threshold: 0.01
+            });
+
+            function observeLazyElements() {
+                document.querySelectorAll('img[data-src], iframe[data-src]').forEach(function (el) {
+                    lazyObserver.observe(el);
+                });
+            }
+
+
+            function showTab(tabName) {
+
+                allTabs.forEach(function (tab) {
+                    tab.hidden = true;
+                    tab.style.display = 'none';
+                });
+
+
+                var target = document.getElementById(tabName);
+                if (target) {
+                    target.hidden = false;
+                    target.style.display = 'block';
+                }
+
+
+                navLinks.forEach(function (link) {
+                    link.classList.toggle('active', link.dataset.tab === tabName);
+                });
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                observeLazyElements();
+            }
+
+            document.addEventListener('click', function (e) {
+                var target = e.target;
+
+                var navLink = target.closest('a[data-tab]');
+                if (navLink) {
+                    e.preventDefault();
+                    showTab(navLink.dataset.tab);
+                    return;
+                }
+                var tabTrigger = target.closest('[data-tab]');
+                if (tabTrigger && !tabTrigger.matches('a')) {
+                    e.preventDefault();
+                    showTab(tabTrigger.dataset.tab);
+                    return;
+                }
+                var clickable = target.closest('.clickable[data-href]');
+                if (clickable) {
+                    e.preventDefault();
+                    window.open(clickable.dataset.href, '_blank', 'noopener,noreferrer');
+                    return;
                 }
             });
-        }
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    var btn = e.target.closest('[role="button"], [data-tab]');
+                    if (btn) {
+                        e.preventDefault();
+                        btn.click();
+                    }
+                }
+            });
+
+            var gifTimeout;
+
+            headerIcon.addEventListener('mouseenter', function () {
+                headerIcon.src = GIF_STATIC;
+            });
+
+            headerIcon.addEventListener('mouseleave', function () {
+                clearTimeout(gifTimeout);
+                headerIcon.src = GIF_ANIMATED;
+            });
+
+            headerIcon.addEventListener('click', function () {
+                clearTimeout(gifTimeout);
+                headerIcon.src = GIF_HIT;
+                showTab('research');
 
 
+                gifTimeout = setTimeout(function () {
+                    headerIcon.src = GIF_ANIMATED;
+                }, 2000);
+            });
 
-        function openInNewTab(imageSrc) {
-            window.open(imageSrc, '_blank');
-        }
+            document.addEventListener('DOMContentLoaded', function () {
+                var hash = window.location.hash.replace('#', '');
+                var validTabs = Array.from(allTabs).map(function (t) { return t.id; });
+                var initialTab = validTabs.indexOf(hash) !== -1 ? hash : DEFAULT_TAB;
 
-        function pauseGif() {
-    document.getElementById('headerIcon').src = 'siteIMG/IzeeCon.PNG';
-}
+                showTab(initialTab);
+                observeLazyElements();
 
-function playGif() {
-    document.getElementById('headerIcon').src = 'siteIMG/izee.gif';
-}
+                var preload = new Image();
+                preload.src = GIF_ANIMATED;
+                preload.onload = function () {
+                    headerIcon.src = GIF_ANIMATED;
+                };
+            });
 
-function hitGif() {
-    document.getElementById('headerIcon').src = 'siteIMG/izee2.gif';
-}
+            window.addEventListener('hashchange', function () {
+                var hash = window.location.hash.replace('#', '');
+                var validTabs = Array.from(allTabs).map(function (t) { return t.id; });
+                if (validTabs.indexOf(hash) !== -1) {
+                    showTab(hash);
+                }
+            });
 
-
-
+        })();
     </script>
 </body>
+
 </html>
 
 
